@@ -2,8 +2,8 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Install required SSL certificates
-RUN apk add --no-cache ca-certificates
+# Install required SSL certificates and fonts
+RUN apk add --no-cache ca-certificates fontconfig
 
 # Declare and set build arguments
 ARG NEXT_PUBLIC_WORDPRESS_URL
@@ -28,7 +28,7 @@ RUN npm ci
 COPY . .
 
 # Generate types and build
-RUN npm run build
+RUN npm run generate && npm run build
 
 # Production stage
 FROM node:20-alpine AS runner
@@ -37,11 +37,15 @@ ENV NODE_ENV=production \
     PORT=3000 \
     HOSTNAME="0.0.0.0"
 
+# Copy package.json and install production dependencies
+COPY package*.json ./
+RUN npm ci --production
+
 # Copy built files
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
 
 # Start the app
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
