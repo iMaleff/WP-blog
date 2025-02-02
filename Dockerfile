@@ -29,8 +29,10 @@ COPY . .
 
 # Generate types and build
 RUN npm run generate && npm run build && \
-echo "Checking .next directory contents:" && \
-ls -la .next
+    echo "=== Build stage .next directory ===" && \
+    ls -la .next && \
+    echo "=== Build stage .next/static ===" && \
+    ls -la .next/static || true
 
 # Production stage
 FROM node:20-alpine AS runner
@@ -40,7 +42,7 @@ ENV NODE_ENV=production \
     HOSTNAME="0.0.0.0"
 
 # Install required SSL certificates and fonts
-RUN apk add --no-cache ca-certificates fontconfig
+#RUN apk add --no-cache ca-certificates fontconfig
 
 # Copy package.json and install production dependencies
 COPY package*.json ./
@@ -52,11 +54,10 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/package.json ./package.json
 
-
 # Start the app
-#CMD ["npm", "start"]
-# В конце Dockerfile
-CMD echo "Checking .next directory:" && \
+CMD echo "=== Production stage .next directory ===" && \
     ls -la .next && \
-    echo "Starting application:" && \
+    echo "=== Production stage .next/static ===" && \
+    ls -la .next/static || true && \
+    echo "=== Starting application ===" && \
     npm start
