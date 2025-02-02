@@ -25,8 +25,7 @@ RUN npm ci
 # Copy source
 COPY . .
 
-# Generate and build
-RUN npm run generate
+# Build
 RUN npm run build
 
 # Production stage
