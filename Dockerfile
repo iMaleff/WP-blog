@@ -28,7 +28,9 @@ RUN npm ci
 COPY . .
 
 # Generate types and build
-RUN npm run generate && npm run build
+RUN npm run generate && npm run build && \
+echo "Checking .next directory contents:" && \
+ls -la .next
 
 # Production stage
 FROM node:20-alpine AS runner
@@ -37,14 +39,24 @@ ENV NODE_ENV=production \
     PORT=3000 \
     HOSTNAME="0.0.0.0"
 
+# Install required SSL certificates and fonts
+RUN apk add --no-cache ca-certificates fontconfig
+
 # Copy package.json and install production dependencies
 COPY package*.json ./
 RUN npm ci --production
 
 # Copy built files
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/package.json ./package.json
+
 
 # Start the app
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+# В конце Dockerfile
+CMD echo "Checking .next directory:" && \
+    ls -la .next && \
+    echo "Starting application:" && \
+    npm start
