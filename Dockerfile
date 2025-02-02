@@ -41,11 +41,14 @@ ENV NODE_ENV=production \
 COPY package*.json ./
 RUN npm ci --production
 
-# Copy built files
+# Copy necessary files for production
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/src ./src
+COPY --from=builder /app/faust.config.js ./
+COPY --from=builder /app/possibleTypes.json ./
 
 # Start the app
 CMD ["npm", "start"]
