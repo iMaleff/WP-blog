@@ -9,7 +9,6 @@ module.exports = withFaust({
 	reactStrictMode: true,
 	experimental: {
 		typedRoutes: false,
-		appDir: true,
 	},
 	images: {
 		remotePatterns: [
@@ -105,5 +104,4 @@ module.exports = withFaust({
 		]
 	},
 	output: 'standalone',
-	pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 })
