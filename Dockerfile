@@ -2,7 +2,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Declare all build arguments
+# Declare and set build arguments
 ARG NEXT_PUBLIC_WORDPRESS_URL
 ARG FAUST_SECRET_KEY
 ARG NEXT_PUBLIC_URL
@@ -10,31 +10,28 @@ ARG NEXT_PUBLIC_SITE_DIRECTION
 ARG NEXT_PUBLIC_SITE_GEAR_ICON
 ARG NEXT_PUBLIC_SITE_API_METHOD
 
-# Set environment variables from build arguments
-ENV NEXT_PUBLIC_WORDPRESS_URL=$NEXT_PUBLIC_WORDPRESS_URL
-ENV FAUST_SECRET_KEY=$FAUST_SECRET_KEY
-ENV NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL
-ENV NEXT_PUBLIC_SITE_DIRECTION=$NEXT_PUBLIC_SITE_DIRECTION
-ENV NEXT_PUBLIC_SITE_GEAR_ICON=$NEXT_PUBLIC_SITE_GEAR_ICON
-ENV NEXT_PUBLIC_SITE_API_METHOD=$NEXT_PUBLIC_SITE_API_METHOD
-
-# Create necessary directories
-RUN mkdir -p .next
+ENV NEXT_PUBLIC_WORDPRESS_URL=$NEXT_PUBLIC_WORDPRESS_URL \
+    FAUST_SECRET_KEY=$FAUST_SECRET_KEY \
+    NEXT_PUBLIC_URL=$NEXT_PUBLIC_URL \
+    NEXT_PUBLIC_SITE_DIRECTION=$NEXT_PUBLIC_SITE_DIRECTION \
+    NEXT_PUBLIC_SITE_GEAR_ICON=$NEXT_PUBLIC_SITE_GEAR_ICON \
+    NEXT_PUBLIC_SITE_API_METHOD=$NEXT_PUBLIC_SITE_API_METHOD
 
 # Install dependencies
 COPY package*.json ./
-RUN npm ci
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci
 
 # Copy source
 COPY . .
 
-# Build
-RUN npm run build
+# Build with cache
+RUN --mount=type=cache,target=/app/.next/cache \
+    npm run build
 
 # Production stage
 FROM node:20-alpine AS runner
 WORKDIR /app
-
 ENV NODE_ENV production
 
 # Copy built files
