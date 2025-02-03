@@ -3,7 +3,7 @@ import ArchiveFilterListBox from '@/components/ArchiveFilterListBox/ArchiveFilte
 import Input from '@/components/Input/Input'
 import SectionSubscribe2 from '@/components/SectionSubscribe2/SectionSubscribe2'
 import SectionTrendingTopic from '@/components/SectionTrendingTopic'
-import { FILTERS_OPTIONS } from '@/contains/contants'
+import { FILTERS_OPTIONS } from '@/contains/constants'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { FC } from 'react'

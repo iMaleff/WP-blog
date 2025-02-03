@@ -5,7 +5,7 @@ import {
 	NcgeneralSettingsFieldsFragmentFragment,
 	SearchPageQueryGetUsersBySearchQuery,
 } from '@/__generated__/graphql'
-import { GET_USERS_FIRST_COMMON, REVALIDATE_TIME } from '@/contains/contants'
+import { GET_USERS_FIRST_COMMON, REVALIDATE_TIME } from '@/contains/constants'
 import React from 'react'
 import ButtonPrimary from '@/components/Button/ButtonPrimary'
 import Empty from '@/components/Empty'

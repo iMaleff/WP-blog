@@ -5,7 +5,7 @@ import {
 	NcgeneralSettingsFieldsFragmentFragment,
 	SearchPageQueryGetPostsBySearchQuery,
 } from '@/__generated__/graphql'
-import { GET_POSTS_FIRST_COMMON, REVALIDATE_TIME } from '@/contains/contants'
+import { GET_POSTS_FIRST_COMMON, REVALIDATE_TIME } from '@/contains/constants'
 import React from 'react'
 import { useRouter } from 'next/router'
 import useHandleGetPostsArchivePage from '@/hooks/useHandleGetPostsArchivePage'

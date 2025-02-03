@@ -2,7 +2,7 @@ import ArchiveFilterListBox from '@/components/ArchiveFilterListBox/ArchiveFilte
 import { TPostCard } from '@/components/Card2/Card2'
 import { TCategoryCardFull } from '@/components/CardCategory1/CardCategory1'
 import GridPostsArchive from '@/components/GridPostsArchive'
-import { FILTERS_OPTIONS } from '@/contains/contants'
+import { FILTERS_OPTIONS } from '@/contains/constants'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 import { PostDataFragmentType } from '@/data/types'
 import useGetPostsNcmazMetaByIds from '@/hooks/useGetPostsNcmazMetaByIds'

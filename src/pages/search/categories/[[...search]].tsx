@@ -9,7 +9,7 @@ import {
 import {
 	GET_CATEGORIES_FIRST_COMMON,
 	REVALIDATE_TIME,
-} from '@/contains/contants'
+} from '@/contains/constants'
 import React from 'react'
 import ButtonPrimary from '@/components/Button/ButtonPrimary'
 import Empty from '@/components/Empty'

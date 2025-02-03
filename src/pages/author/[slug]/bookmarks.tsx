@@ -5,7 +5,7 @@ import { PageAuthorBookmarksGetDataQuery } from '@/__generated__/graphql'
 import React from 'react'
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from '@/contains/menu'
 import AuthorSaveChild from '@/container/author/AuthorSaveChild'
-import { REVALIDATE_TIME } from '@/contains/contants'
+import { REVALIDATE_TIME } from '@/contains/constants'
 
 const Page: FaustPage<PageAuthorBookmarksGetDataQuery> = (props) => {
 	return (

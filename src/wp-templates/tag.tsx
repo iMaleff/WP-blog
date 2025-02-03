@@ -7,7 +7,7 @@ import { TCategoryCardFull } from "@/components/CardCategory1/CardCategory1";
 import SocialsShareDropdown from "@/components/SocialsShareDropdown/SocialsShareDropdown";
 import PageLayout from "@/container/PageLayout";
 import ArchiveLayout from "@/container/archives/ArchiveLayout";
-import { GET_POSTS_FIRST_COMMON } from "@/contains/contants";
+import { GET_POSTS_FIRST_COMMON } from "@/contains/constants";
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from "@/contains/menu";
 import { PostDataFragmentType } from "@/data/types";
 import { getTagDataFromTagFragment } from "@/utils/getTagDataFromTagFragment";
