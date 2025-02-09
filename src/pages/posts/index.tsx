@@ -6,7 +6,7 @@ import {
 	PostObjectsConnectionOrderbyEnum,
 	PostsFilterPageQueryGetPostsQuery,
 } from '@/__generated__/graphql'
-import { FILTERS_OPTIONS } from '@/contains/constants'
+import { FILTERS_OPTIONS } from '@/contains/contants'
 import React from 'react'
 import { useRouter } from 'next/router'
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from '@/contains/menu'

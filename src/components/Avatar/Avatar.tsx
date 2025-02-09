@@ -1,6 +1,6 @@
 'use client'
 
-import { avatarColors } from '@/contains/constants'
+import { avatarColors } from '@/contains/contants'
 import { StaticImageData } from 'next/image'
 import { FC } from 'react'
 import MyImage from '../MyImage'

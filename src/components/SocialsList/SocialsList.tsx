@@ -45,6 +45,7 @@ const SocialsList: FC<SocialsListProps> = ({
 						title={item.name}
 					>
 						{item.icon}
+						<span className="sr-only">{item.name}</span>
 					</a>
 				) : null,
 			)}

@@ -5,7 +5,7 @@ import { PageAuthorFavoritesGetDataQuery } from '@/__generated__/graphql'
 import React from 'react'
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from '@/contains/menu'
 import AuthorFavoritesChild from '@/container/author/AuthorFavoritesChild'
-import { REVALIDATE_TIME } from '@/contains/constants'
+import { REVALIDATE_TIME } from '@/contains/contants'
 
 const Page: FaustPage<PageAuthorFavoritesGetDataQuery> = (props) => {
 	return (

@@ -6,7 +6,7 @@ import {
 } from "@faustwp/core";
 import { gql } from "@/__generated__";
 import { PostStatusEnum } from "@/__generated__/graphql";
-import { GET_POSTS_FIRST_COMMON_FOR_DASHBOARD } from "@/contains/constants";
+import { GET_POSTS_FIRST_COMMON_FOR_DASHBOARD } from "@/contains/contants";
 import React, { useEffect } from "react";
 import { getPostDataFromPostFragment } from "@/utils/getPostDataFromPostFragment";
 import { useRouter } from "next/router";

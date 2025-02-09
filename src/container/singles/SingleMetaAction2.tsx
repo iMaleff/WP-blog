@@ -39,21 +39,24 @@ const SingleMetaAction2: FC<Props> = ({ className = '', post }) => {
 					showCommentCount={NC_SITE_SETTINGS['single_page']?.show_comment_count}
 					viewCount={ncPostMetaData?.viewsCount || 1}
 				/>
-				<div className="pr-1">
-					<div className="h-5 border-s border-neutral-200 sm:h-6 dark:border-neutral-700" />
-				</div>
 
-				<NcBookmark
-					postDatabseId={databaseId}
-					containerClassName="h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-				/>
-				<SocialsShareDropdown />
-				<PostActionDropdown
-					containerClassName="h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700"
-					iconClass="h-5 w-5"
-					post={post}
-					isSingle
-				/>
+				<div className="flex flex-grow items-center justify-end gap-2 sm:gap-2.5">
+					<div className="pr-1">
+						<div className="h-5 border-s border-neutral-200 sm:h-6 dark:border-neutral-700" />
+					</div>
+
+					<NcBookmark
+						postDatabseId={databaseId}
+						containerClassName="h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+					/>
+					<SocialsShareDropdown />
+					<PostActionDropdown
+						containerClassName="h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+						iconClass="h-5 w-5"
+						post={post}
+						isSingle
+					/>
+				</div>
 			</div>
 		</div>
 	)

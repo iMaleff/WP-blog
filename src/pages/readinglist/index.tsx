@@ -10,7 +10,7 @@ import PageLayout from '@/container/PageLayout'
 import Heading from '@/components/Heading/Heading'
 import getTrans from '@/utils/getTrans'
 import ReadingListPageChild from '@/container/readinglist/ReadingListPageChild'
-import { REVALIDATE_TIME } from '@/contains/constants'
+import { REVALIDATE_TIME } from '@/contains/contants'
 
 //
 

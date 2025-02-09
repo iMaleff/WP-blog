@@ -2,7 +2,7 @@ import {
   OrderEnum,
   PostObjectsConnectionOrderbyEnum,
 } from "@/__generated__/graphql";
-import { FILTERS_OPTIONS, GET_POSTS_FIRST_COMMON } from "@/contains/constants";
+import { FILTERS_OPTIONS, GET_POSTS_FIRST_COMMON } from "@/contains/contants";
 import { PostDataFragmentType } from "@/data/types";
 import { QUERY_GET_POSTS_BY } from "@/fragments/queries";
 import errorHandling from "@/utils/errorHandling";

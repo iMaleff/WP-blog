@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
-const { fontFamily } = require('tailwindcss/defaultTheme')
 
 // Custom color with css variable color in __theme_color.scss
 function customColors(cssVar) {
@@ -74,9 +73,6 @@ module.exports = {
           800: customColors("--c-neutral-800"),
           900: customColors("--c-neutral-900"),
         },
-      },
-      fontFamily: {
-        sans: ['var(--font-noto-serif)', ...fontFamily.sans],
       },
     },
   },

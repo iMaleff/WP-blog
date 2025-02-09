@@ -77,6 +77,7 @@ export const POST_MORE_ACTIONS: TPostActionitem[] = [
 ]
 
 export interface Props {
+	wrapClassName?: string
 	containerClassName?: string
 	iconClass?: string
 	dropdownPositon?: 'up' | 'down'
@@ -85,6 +86,7 @@ export interface Props {
 }
 
 const PostActionDropdown: FC<Props> = ({
+	wrapClassName = '',
 	containerClassName = 'h-8 w-8 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700',
 	iconClass = 'h-5 w-5',
 	dropdownPositon = 'down',
@@ -287,7 +289,7 @@ const PostActionDropdown: FC<Props> = ({
 		)
 	}
 
-	return <div>{renderMenu()}</div>
+	return <div className={wrapClassName}>{renderMenu()}</div>
 }
 
 export default PostActionDropdown

@@ -23,7 +23,7 @@ import Page404Content from '@/container/404Content'
 import Error from '@/components/Error'
 import Link from 'next/link'
 import { ArrowLeftIcon } from '@heroicons/react/24/solid'
-import { REVALIDATE_TIME } from '@/contains/constants'
+import { REVALIDATE_TIME } from '@/contains/contants'
 
 const PageContact = () => {
 	const T = getTrans()

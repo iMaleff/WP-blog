@@ -1,6 +1,8 @@
 const { withFaust, getWpHostname } = require('@faustwp/core')
 const { createSecureHeaders } = require('next-secure-headers')
 
+const wpHostname = getWpHostname() || new URL(process.env.NEXT_PUBLIC_WORDPRESS_URL).hostname
+
 /**
  * @type {import('next').NextConfig}
  **/
@@ -14,19 +16,13 @@ module.exports = withFaust({
 		remotePatterns: [
 			{
 				protocol: 'http',
-				hostname: 'localhost',
-				port: '',
-				pathname: '/**',
-			},
-			{
-				protocol: 'http',
-				hostname: getWpHostname(),
+				hostname: wpHostname,
 				port: '',
 				pathname: '/**',
 			},
 			{
 				protocol: 'https',
-				hostname: getWpHostname(),
+				hostname: wpHostname,
 				port: '',
 				pathname: '/**',
 			},
@@ -103,5 +99,4 @@ module.exports = withFaust({
 			},
 		]
 	},
-	output: 'standalone',
 })

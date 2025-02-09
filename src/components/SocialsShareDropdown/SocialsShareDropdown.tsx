@@ -70,6 +70,7 @@ const SocialsShareDropdown: FC<Props> = ({
 		<div className={`nc-SocialsShare flex-shrink-0 ${className}`}>
 			<NcDropDown
 				className={`flex flex-shrink-0 items-center justify-center rounded-full text-neutral-700 focus:outline-none dark:text-neutral-200 ${sizeClass} ${bgClass}`}
+				title="Share"
 				renderTrigger={() => <Share05Icon className="h-[18px] w-[18px]" />}
 				onClick={handleClick}
 				data={actions}

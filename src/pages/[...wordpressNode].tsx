@@ -1,7 +1,8 @@
 import { getWordPressProps, WordPressTemplate } from '@faustwp/core'
 import { GetStaticProps } from 'next'
 import { WordPressTemplateProps } from '../types'
-import { REVALIDATE_TIME } from '@/contains/constants'
+import { REVALIDATE_TIME } from '@/contains/contants'
+import { IS_CHISNGHIAX_DEMO_SITE } from '@/contains/site-settings'
 
 export default function Page(props: WordPressTemplateProps) {
 	return <WordPressTemplate {...props} />
@@ -21,22 +22,29 @@ export async function myGetPaths() {
 	let categories = (await getAllCategories.json()) as any[]
 
 	if (!categories?.length) {
-		categories = [{ slug: 'uncategorized' }]
+		categories = []
 	}
 	if (!posts?.length) {
-		posts = [{ slug: 'hello-world' }]
+		posts = []
 	}
 
 	posts = [
 		...categories.map((category) => ({ slug: 'category/' + category.slug })),
 		...posts,
-		{ slug: 'home-2' },
-		{ slug: 'home-3-podcast' },
-		{ slug: 'home-4-video' },
-		{ slug: 'home-5-gallery' },
-		{ slug: 'home-6' },
-		{ slug: 'search/posts/' },
 	]
+
+	if (IS_CHISNGHIAX_DEMO_SITE) {
+		posts = [
+			...posts,
+			// Add more demo pages
+			{ slug: 'home-2' },
+			{ slug: 'home-3-podcast' },
+			{ slug: 'home-4-video' },
+			{ slug: 'home-5-gallery' },
+			{ slug: 'home-6' },
+			{ slug: 'search/posts/' },
+		]
+	}
 
 	return posts.map((page) => ({
 		params: { wordpressNode: [page.slug] },
