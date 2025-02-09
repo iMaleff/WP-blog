@@ -74,7 +74,20 @@ module.exports = {
           900: customColors("--c-neutral-900"),
         },
       },
+      fontFamily: {
+        serif: ['var(--font-noto-serif)'],
+        heading: ['var(--font-noto-serif)', ...defaultTheme.fontFamily.serif],
+      },
     },
+    typography: {
+      DEFAULT: {
+        css: {
+          'h1, h2, h3, h4': {
+            fontFamily: 'var(--font-noto-serif)',
+          }
+        }
+      }
+    }
   },
   variants: {
     extend: {

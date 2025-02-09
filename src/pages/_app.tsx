@@ -7,17 +7,43 @@ import '@/styles/index.scss'
 import { AppProps } from 'next/app'
 import { WordPressBlocksProvider, fromThemeJson } from '@faustwp/blocks'
 import blocks from '@/wp-blocks'
-import { Poppins } from 'next/font/google'
+import localFont from 'next/font/local'
 import SiteWrapperProvider from '@/container/SiteWrapperProvider'
 import { Toaster } from 'react-hot-toast'
 import NextNProgress from 'nextjs-progressbar'
 import themeJson from '@/../theme.json'
 import { GoogleAnalytics } from 'nextjs-google-analytics'
 
-const poppins = Poppins({
-	subsets: ['latin'],
+const notoSerif = localFont({
+	src: [
+		{
+			path: '../../public/fonts/noto-serif/NotoSerif-Light.woff2',
+			weight: '300',
+			style: 'normal',
+		},
+		{
+			path: '../../public/fonts/noto-serif/NotoSerif-Regular.woff2',
+			weight: '400',
+			style: 'normal',
+		},
+		{
+			path: '../../public/fonts/noto-serif/NotoSerif-Medium.woff2',
+			weight: '500',
+			style: 'normal',
+		},
+		{
+			path: '../../public/fonts/noto-serif/NotoSerif-SemiBold.woff2',
+			weight: '600',
+			style: 'normal',
+		},
+		{
+			path: '../../public/fonts/noto-serif/NotoSerif-Bold.woff2',
+			weight: '700',
+			style: 'normal',
+		},
+	],
 	display: 'swap',
-	weight: ['300', '400', '500', '600', '700'],
+	variable: '--font-noto-serif',
 })
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -37,7 +63,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 					<SiteWrapperProvider {...pageProps}>
 						<style jsx global>{`
 							html {
-								font-family: ${poppins.style.fontFamily};
+								font-family: ${notoSerif.style.fontFamily};
 							}
 						`}</style>
 						<NextNProgress color="#818cf8" />

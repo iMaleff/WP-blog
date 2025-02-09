@@ -1,9 +1,16 @@
-import { Template } from '@faustwp/core'
-import frontPage from './front-page'
-import page from './page'
-import single from './single'
-import archive from './archive'
+import page from "./page";
+import single from "./single";
+import category from "./category";
+import tag from "./tag";
+import main from "./main";
+import archive from "./archive";
 
-const templates: Template[] = [frontPage, page, single, archive]
-
-export default templates 
+export default {
+  // front page will a specifycially page
+  page,
+  single,
+  category,
+  tag,
+  index: main,
+  archive,
+}; 
