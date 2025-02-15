@@ -1,16 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  :root {
-    --font-noto-serif: 'Noto Serif', serif;
-  }
-  body {
-    @apply font-serif antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold;
-  }
-}

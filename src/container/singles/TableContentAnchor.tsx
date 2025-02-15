@@ -1,5 +1,6 @@
 import { MyTask01Icon } from '@/components/Icons/Icons'
 import getTrans from '@/utils/getTrans'
+import { ContentBlock } from '@faustwp/blocks/dist/mjs/components/WordPressBlocksViewer'
 import { flatListToHierarchical } from '@faustwp/core'
 import {
 	Popover,
@@ -26,14 +27,25 @@ interface TableContentProps {
 	content: string
 	className?: string
 	btnClassName?: string
+	editorBlocks?: (ContentBlock | null)[]
 }
 
 const TableContent: React.FC<TableContentProps> = ({
-	content,
+	editorBlocks,
+	content: oldContent,
 	className = '',
 	btnClassName = 'relative rounded-full flex items-center justify-center h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700',
 }) => {
 	// function xử lý content, trả về mảng các heading theo thứ tự xuất hiện trong content (đã sắp xếp) và có thêm thuộc tính id (tạo id nếu chưa có)
+	const content =
+		editorBlocks
+			?.map((block) => {
+				if (block?.__typename === 'CoreHeading') {
+					return block.renderedHtml || ''
+				}
+				return ''
+			})
+			.join('') || oldContent
 
 	function extractHeadings(content: string) {
 		const parser = new DOMParser()

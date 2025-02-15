@@ -176,6 +176,7 @@ const SingleContent: FC<SingleContentProps> = ({ post }) => {
 				isShowScrollToTop={isShowScrollToTop}
 				post={post}
 				ref={progressRef}
+				blocks={blocks}
 			/>
 		</div>
 	)
@@ -186,10 +187,12 @@ const StickyAction = forwardRef(function (
 		showLikeAndCommentSticky,
 		post,
 		isShowScrollToTop,
+		blocks,
 	}: {
 		showLikeAndCommentSticky: boolean
 		post: GetPostSiglePageQuery['post']
 		isShowScrollToTop: boolean
+		blocks: (ContentBlock | null)[]
 	},
 	progressRef,
 ) {
@@ -265,6 +268,7 @@ const StickyAction = forwardRef(function (
 					<TableContentAnchor
 						className="flex items-center justify-center gap-2 rounded-full bg-white p-1.5 text-xs shadow-lg ring-1 ring-neutral-900/5 ring-offset-1 dark:bg-neutral-800 dark:ring-neutral-700 dark:ring-offset-neutral-600"
 						content={content}
+						editorBlocks={blocks}
 					/>
 				</>
 			</Transition>

@@ -1,11 +1,9 @@
 {
   "name": "ncmaz-faust",
   "private": true,
-  "version": "2.10.0",
+  "version": "2.10.1",
   "scripts": {
-    "dev": "next dev",
-    "dev:faust": "npx faust dev",
-    "dev:watch": "npm run generate && concurrently \"faust dev\" \"npm run watch-codegen\"",
+    "dev": "npm run generate && concurrently \"faust dev\" \"npm run watch-codegen\"",
     "build": "faust build",
     "postbuild": "next-sitemap",
     "generate": "faust generatePossibleTypes",
@@ -49,7 +47,7 @@
     "graphql": "^16.9.0",
     "html-entities": "^2.5.2",
     "lodash": "^4.17.21",
-    "next": "14.0.4",
+    "next": "^14.2.18",
     "next-secure-headers": "^2.2.0",
     "next-seo": "^6.6.0",
     "next-sitemap": "^4.2.3",
