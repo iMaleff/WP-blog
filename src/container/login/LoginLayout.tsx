@@ -8,10 +8,10 @@ import React, { FC } from 'react'
 
 interface Props {
 	children: React.ReactNode
-	rightBtn: {
+	rightBtn?: {
 		text: string
 		href: string
-	}
+	} | null
 	isLoginPage?: boolean
 	isSignUpPage?: boolean
 	isResetPasswordPage?: boolean
@@ -47,12 +47,14 @@ const LoginLayout: FC<Props> = ({
 
 	return (
 		<div className="not-dark container relative h-[100vh] min-h-[600px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 xl:min-h-[800px] dark:bg-zinc-950">
-			<Link
-				className="focus-visible:ring-ring absolute right-4 top-4 hidden h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 md:right-8 md:top-8 lg:inline-flex dark:hover:bg-neutral-700"
-				href={rightBtn.href}
-			>
-				{rightBtn.text}
-			</Link>
+			{rightBtn && (
+				<Link
+					className="focus-visible:ring-ring absolute right-4 top-4 hidden h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 md:right-8 md:top-8 lg:inline-flex dark:hover:bg-neutral-700"
+					href={rightBtn.href}
+				>
+					{rightBtn.text}
+				</Link>
+			)}
 			<div className="dark relative hidden h-full flex-col overflow-y-auto border-zinc-800 p-10 text-neutral-100 lg:flex dark:border-r">
 				<div className="absolute inset-0 bg-zinc-900" />
 				<div className="dark relative z-20 flex items-center text-lg font-medium">

@@ -117,14 +117,6 @@ export default function ResetPassWord() {
 				</div>
 
 				<p className="text-center text-sm leading-6 text-neutral-500 dark:text-neutral-400">
-					{T['Not a member?']}{' '}
-					<Link
-						href="/sign-up"
-						className="text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
-					>
-						{T['Sign up']}
-					</Link>
-					<span className="mx-1">|</span>
 					<Link
 						href="/login"
 						className="text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
