@@ -856,8 +856,6 @@ export type CommentToCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -955,8 +953,6 @@ export type CommentToParentCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -1670,8 +1666,6 @@ export type CoreArchives = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreArchives Block Type */
@@ -1726,8 +1720,6 @@ export type CoreAudio = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreAudio Block Type */
@@ -1784,8 +1776,6 @@ export type CoreAvatar = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreAvatar Block Type */
@@ -1836,8 +1826,6 @@ export type CoreBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreBlock Block Type */
@@ -1878,8 +1866,6 @@ export type CoreButton = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreButton Block Type */
@@ -1958,8 +1944,6 @@ export type CoreButtons = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreButtons Block Type */
@@ -2016,8 +2000,6 @@ export type CoreCalendar = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCalendar Block Type */
@@ -2070,8 +2052,6 @@ export type CoreCategories = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCategories Block Type */
@@ -2136,8 +2116,6 @@ export type CoreCode = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCode Block Type */
@@ -2198,8 +2176,6 @@ export type CoreColumn = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreColumn Block Type */
@@ -2264,8 +2240,6 @@ export type CoreColumns = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreColumns Block Type */
@@ -2328,8 +2302,6 @@ export type CoreCommentAuthorName = EditorBlock & PageEditorBlock & PostEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentAuthorName Block Type */
@@ -2386,8 +2358,6 @@ export type CoreCommentContent = EditorBlock & PageEditorBlock & PostEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentContent Block Type */
@@ -2440,8 +2410,6 @@ export type CoreCommentDate = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentDate Block Type */
@@ -2496,8 +2464,6 @@ export type CoreCommentEditLink = EditorBlock & PageEditorBlock & PostEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentEditLink Block Type */
@@ -2550,8 +2516,6 @@ export type CoreCommentReplyLink = EditorBlock & PageEditorBlock & PostEditorBlo
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentReplyLink Block Type */
@@ -2602,8 +2566,6 @@ export type CoreCommentTemplate = EditorBlock & PageEditorBlock & PostEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentTemplate Block Type */
@@ -2650,8 +2612,6 @@ export type CoreComments = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreComments Block Type */
@@ -2706,8 +2666,6 @@ export type CoreCommentsPagination = EditorBlock & PageEditorBlock & PostEditorB
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentsPagination Block Type */
@@ -2762,8 +2720,6 @@ export type CoreCommentsPaginationNext = EditorBlock & PageEditorBlock & PostEdi
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentsPaginationNext Block Type */
@@ -2812,8 +2768,6 @@ export type CoreCommentsPaginationNumbers = EditorBlock & PageEditorBlock & Post
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentsPaginationNumbers Block Type */
@@ -2860,8 +2814,6 @@ export type CoreCommentsPaginationPrevious = EditorBlock & PageEditorBlock & Pos
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentsPaginationPrevious Block Type */
@@ -2910,8 +2862,6 @@ export type CoreCommentsTitle = EditorBlock & PageEditorBlock & PostEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCommentsTitle Block Type */
@@ -2976,8 +2926,6 @@ export type CoreCover = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreCover Block Type */
@@ -3070,8 +3018,6 @@ export type CoreDetails = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreDetails Block Type */
@@ -3130,8 +3076,6 @@ export type CoreEmbed = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreEmbed Block Type */
@@ -3188,8 +3132,6 @@ export type CoreFile = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreFile Block Type */
@@ -3260,8 +3202,6 @@ export type CoreFootnotes = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreFootnotes Block Type */
@@ -3310,8 +3250,6 @@ export type CoreFreeform = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreFreeform Block Type */
@@ -3350,8 +3288,6 @@ export type CoreGallery = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreGallery Block Type */
@@ -3445,8 +3381,6 @@ export type CoreGroup = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreGroup Block Type */
@@ -3509,8 +3443,6 @@ export type CoreHeading = BlockWithSupportsAnchor & EditorBlock & PageEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreHeading Block Type */
@@ -3577,8 +3509,6 @@ export type CoreHomeLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreHomeLink Block Type */
@@ -3623,8 +3553,6 @@ export type CoreHtml = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreHtml Block Type */
@@ -3665,8 +3593,6 @@ export type CoreImage = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreImage Block Type */
@@ -3749,8 +3675,6 @@ export type CoreLatestComments = EditorBlock & PageEditorBlock & PostEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreLatestComments Block Type */
@@ -3809,8 +3733,6 @@ export type CoreLatestPosts = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreLatestPosts Block Type */
@@ -3897,8 +3819,6 @@ export type CoreLegacyWidget = EditorBlock & PageEditorBlock & PostEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreLegacyWidget Block Type */
@@ -3941,8 +3861,6 @@ export type CoreList = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreList Block Type */
@@ -4011,8 +3929,6 @@ export type CoreListItem = BlockWithSupportsAnchor & EditorBlock & PageEditorBlo
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreListItem Block Type */
@@ -4069,8 +3985,6 @@ export type CoreLoginout = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreLoginout Block Type */
@@ -4125,8 +4039,6 @@ export type CoreMediaText = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreMediaText Block Type */
@@ -4219,8 +4131,6 @@ export type CoreMissing = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreMissing Block Type */
@@ -4261,8 +4171,6 @@ export type CoreMore = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreMore Block Type */
@@ -4301,8 +4209,6 @@ export type CoreNavigation = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreNavigation Block Type */
@@ -4385,8 +4291,6 @@ export type CoreNavigationLink = EditorBlock & PageEditorBlock & PostEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreNavigationLink Block Type */
@@ -4449,8 +4353,6 @@ export type CoreNavigationSubmenu = EditorBlock & PageEditorBlock & PostEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreNavigationSubmenu Block Type */
@@ -4513,8 +4415,6 @@ export type CoreNextpage = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreNextpage Block Type */
@@ -4549,8 +4449,6 @@ export type CorePageList = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePageList Block Type */
@@ -4597,8 +4495,6 @@ export type CorePageListItem = EditorBlock & PageEditorBlock & PostEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePageListItem Block Type */
@@ -4647,8 +4543,6 @@ export type CoreParagraph = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreParagraph Block Type */
@@ -4713,8 +4607,6 @@ export type CorePattern = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePattern Block Type */
@@ -4753,8 +4645,6 @@ export type CorePostAuthor = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostAuthor Block Type */
@@ -4819,8 +4709,6 @@ export type CorePostAuthorBiography = EditorBlock & PageEditorBlock & PostEditor
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostAuthorBiography Block Type */
@@ -4873,8 +4761,6 @@ export type CorePostAuthorName = EditorBlock & PageEditorBlock & PostEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostAuthorName Block Type */
@@ -4931,8 +4817,6 @@ export type CorePostComments = EditorBlock & PageEditorBlock & PostEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostComments Block Type */
@@ -4983,8 +4867,6 @@ export type CorePostCommentsForm = EditorBlock & PageEditorBlock & PostEditorBlo
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostCommentsForm Block Type */
@@ -5035,8 +4917,6 @@ export type CorePostContent = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostContent Block Type */
@@ -5089,8 +4969,6 @@ export type CorePostDate = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostDate Block Type */
@@ -5149,8 +5027,6 @@ export type CorePostExcerpt = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostExcerpt Block Type */
@@ -5209,8 +5085,6 @@ export type CorePostFeaturedImage = EditorBlock & PageEditorBlock & PostEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostFeaturedImage Block Type */
@@ -5281,8 +5155,6 @@ export type CorePostNavigationLink = EditorBlock & PageEditorBlock & PostEditorB
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostNavigationLink Block Type */
@@ -5343,8 +5215,6 @@ export type CorePostTemplate = EditorBlock & PageEditorBlock & PostEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostTemplate Block Type */
@@ -5397,8 +5267,6 @@ export type CorePostTerms = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostTerms Block Type */
@@ -5459,8 +5327,6 @@ export type CorePostTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePostTitle Block Type */
@@ -5527,8 +5393,6 @@ export type CorePreformatted = BlockWithSupportsAnchor & EditorBlock & PageEdito
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePreformatted Block Type */
@@ -5585,8 +5449,6 @@ export type CorePullquote = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CorePullquote Block Type */
@@ -5647,8 +5509,6 @@ export type CoreQuery = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQuery Block Type */
@@ -5699,8 +5559,6 @@ export type CoreQueryNoResults = EditorBlock & PageEditorBlock & PostEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQueryNoResults Block Type */
@@ -5751,8 +5609,6 @@ export type CoreQueryPagination = EditorBlock & PageEditorBlock & PostEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQueryPagination Block Type */
@@ -5809,8 +5665,6 @@ export type CoreQueryPaginationNext = EditorBlock & PageEditorBlock & PostEditor
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQueryPaginationNext Block Type */
@@ -5859,8 +5713,6 @@ export type CoreQueryPaginationNumbers = EditorBlock & PageEditorBlock & PostEdi
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQueryPaginationNumbers Block Type */
@@ -5909,8 +5761,6 @@ export type CoreQueryPaginationPrevious = EditorBlock & PageEditorBlock & PostEd
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQueryPaginationPrevious Block Type */
@@ -5959,8 +5809,6 @@ export type CoreQueryTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQueryTitle Block Type */
@@ -6027,8 +5875,6 @@ export type CoreQuote = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreQuote Block Type */
@@ -6093,8 +5939,6 @@ export type CoreReadMore = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreReadMore Block Type */
@@ -6149,8 +5993,6 @@ export type CoreRss = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreRss Block Type */
@@ -6205,8 +6047,6 @@ export type CoreSearch = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSearch Block Type */
@@ -6281,8 +6121,6 @@ export type CoreSeparator = BlockWithSupportsAnchor & EditorBlock & PageEditorBl
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSeparator Block Type */
@@ -6333,8 +6171,6 @@ export type CoreShortcode = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreShortcode Block Type */
@@ -6371,8 +6207,6 @@ export type CoreSiteLogo = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSiteLogo Block Type */
@@ -6421,8 +6255,6 @@ export type CoreSiteTagline = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSiteTagline Block Type */
@@ -6481,8 +6313,6 @@ export type CoreSiteTitle = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSiteTitle Block Type */
@@ -6545,8 +6375,6 @@ export type CoreSocialLink = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSocialLink Block Type */
@@ -6593,8 +6421,6 @@ export type CoreSocialLinks = BlockWithSupportsAnchor & EditorBlock & PageEditor
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSocialLinks Block Type */
@@ -6665,8 +6491,6 @@ export type CoreSpacer = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreSpacer Block Type */
@@ -6713,8 +6537,6 @@ export type CoreTable = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreTable Block Type */
@@ -6851,8 +6673,6 @@ export type CoreTagCloud = EditorBlock & PageEditorBlock & PostEditorBlock & {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreTagCloud Block Type */
@@ -6907,8 +6727,6 @@ export type CoreTemplatePart = EditorBlock & PageEditorBlock & PostEditorBlock &
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreTemplatePart Block Type */
@@ -6955,8 +6773,6 @@ export type CoreTermDescription = EditorBlock & PageEditorBlock & PostEditorBloc
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreTermDescription Block Type */
@@ -7009,8 +6825,6 @@ export type CoreTextColumns = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreTextColumns Block Type */
@@ -7062,8 +6876,6 @@ export type CoreVerse = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreVerse Block Type */
@@ -7122,8 +6934,6 @@ export type CoreVideo = BlockWithSupportsAnchor & EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreVideo Block Type */
@@ -7190,8 +7000,6 @@ export type CoreWidgetGroup = EditorBlock & PageEditorBlock & PostEditorBlock & 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the CoreWidgetGroup Block Type */
@@ -7924,8 +7732,6 @@ export type EditorBlock = {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Asset enqueued by the CMS */
@@ -7948,8 +7754,6 @@ export type EnqueuedAsset = {
    * @deprecated Use `EnqueuedScript.extraData` instead.
    */
   extra?: Maybe<Scalars['String']['output']>;
-  /** The loading group to which this asset belongs. */
-  group?: Maybe<Scalars['Int']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
   /** The ID of the enqueued asset */
@@ -7983,10 +7787,6 @@ export type EnqueuedScript = EnqueuedAsset & Node & {
   extra?: Maybe<Scalars['String']['output']>;
   /** Extra data supplied to the enqueued script */
   extraData?: Maybe<Scalars['String']['output']>;
-  /** The loading group to which this asset belongs. */
-  group?: Maybe<Scalars['Int']['output']>;
-  /** The location where this script should be loaded */
-  groupLocation?: Maybe<ScriptLoadingGroupLocationEnum>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
   /** The global ID of the enqueued script */
@@ -8050,8 +7850,6 @@ export type EnqueuedStylesheet = EnqueuedAsset & Node & {
    * @deprecated Use `EnqueuedScript.extraData` instead.
    */
   extra?: Maybe<Scalars['String']['output']>;
-  /** The loading group to which this asset belongs. */
-  group?: Maybe<Scalars['Int']['output']>;
   /** The handle of the enqueued asset */
   handle?: Maybe<Scalars['String']['output']>;
   /** The global ID of the enqueued stylesheet */
@@ -9248,46 +9046,6 @@ export type HierarchicalTermNodeEnqueuedStylesheetsArgs = {
 };
 
 /** A block used for editing the site */
-export type MailpoetPoweredByMailpoet = EditorBlock & PageEditorBlock & PostEditorBlock & {
-  __typename?: 'MailpoetPoweredByMailpoet';
-  /** The API version of the Gutenberg Block */
-  apiVersion?: Maybe<Scalars['Int']['output']>;
-  /** Attributes of the MailpoetPoweredByMailpoet Block Type */
-  attributes?: Maybe<MailpoetPoweredByMailpoetAttributes>;
-  /** The name of the category the Block belongs to */
-  blockEditorCategoryName?: Maybe<Scalars['String']['output']>;
-  /** The id of the Block */
-  clientId?: Maybe<Scalars['String']['output']>;
-  /** CSS Classnames to apply to the block */
-  cssClassNames?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  /** The inner blocks of the Block */
-  innerBlocks?: Maybe<Array<Maybe<EditorBlock>>>;
-  /** Whether the block is Dynamic (server rendered) */
-  isDynamic: Scalars['Boolean']['output'];
-  /** The name of the block */
-  name?: Maybe<Scalars['String']['output']>;
-  /** The parent id of the Block */
-  parentClientId?: Maybe<Scalars['String']['output']>;
-  /** The rendered HTML for the block */
-  renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
-};
-
-/** Attributes of the MailpoetPoweredByMailpoet Block Type */
-export type MailpoetPoweredByMailpoetAttributes = {
-  __typename?: 'MailpoetPoweredByMailpoetAttributes';
-  /** The &quot;className&quot; field on the &quot;MailpoetPoweredByMailpoetAttributes&quot; block or block attributes */
-  className?: Maybe<Scalars['String']['output']>;
-  /** The &quot;lock&quot; field on the &quot;MailpoetPoweredByMailpoetAttributes&quot; block or block attributes */
-  lock?: Maybe<Scalars['BlockAttributesObject']['output']>;
-  /** The &quot;logo&quot; field on the &quot;MailpoetPoweredByMailpoetAttributes&quot; block or block attributes */
-  logo: Scalars['String']['output'];
-  /** The &quot;metadata&quot; field on the &quot;MailpoetPoweredByMailpoetAttributes&quot; block or block attributes */
-  metadata?: Maybe<Scalars['BlockAttributesObject']['output']>;
-};
-
-/** A block used for editing the site */
 export type MailpoetSubscriptionFormBlock = EditorBlock & PageEditorBlock & PostEditorBlock & {
   __typename?: 'MailpoetSubscriptionFormBlock';
   /** The API version of the Gutenberg Block */
@@ -9310,8 +9068,6 @@ export type MailpoetSubscriptionFormBlock = EditorBlock & PageEditorBlock & Post
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the MailpoetSubscriptionFormBlock Block Type */
@@ -9348,8 +9104,6 @@ export type MailpoetSubscriptionFormBlockRender = EditorBlock & PageEditorBlock 
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the MailpoetSubscriptionFormBlockRender Block Type */
@@ -9792,8 +9546,6 @@ export type MediaItemToCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -10622,8 +10374,6 @@ export type NcmazFaustBlockCta = BlockWithSupportsAnchor & EditorBlock & PageEdi
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the NcmazFaustBlockCta Block Type */
@@ -10666,8 +10416,6 @@ export type NcmazFaustBlockGroup = EditorBlock & PageEditorBlock & PostEditorBlo
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the NcmazFaustBlockGroup Block Type */
@@ -10714,8 +10462,6 @@ export type NcmazFaustBlockHeading = BlockWithSupportsAnchor & EditorBlock & Pag
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the NcmazFaustBlockHeading Block Type */
@@ -10758,8 +10504,6 @@ export type NcmazFaustBlockMagazine = EditorBlock & PageEditorBlock & PostEditor
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the NcmazFaustBlockMagazine Block Type */
@@ -10810,8 +10554,6 @@ export type NcmazFaustBlockTerms = EditorBlock & PageEditorBlock & PostEditorBlo
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** Attributes of the NcmazFaustBlockTerms Block Type */
@@ -11518,8 +11260,6 @@ export type PageEditorBlock = {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** The Type of Identifier used to fetch a single resource. Default is ID. */
@@ -11635,8 +11375,6 @@ export type PageToCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -12124,8 +11862,6 @@ export type PostEditorBlock = {
   parentClientId?: Maybe<Scalars['String']['output']>;
   /** The rendered HTML for the block */
   renderedHtml?: Maybe<Scalars['String']['output']>;
-  /** The (GraphQL) type of the block */
-  type?: Maybe<Scalars['String']['output']>;
 };
 
 /** The postFormat type */
@@ -12558,8 +12294,6 @@ export enum PostStatusEnum {
   RequestFailed = 'REQUEST_FAILED',
   /** Objects with the request-pending status */
   RequestPending = 'REQUEST_PENDING',
-  /** Objects with the sent status */
-  Sent = 'SENT',
   /** Objects with the trash status */
   Trash = 'TRASH'
 }
@@ -12754,8 +12488,6 @@ export type PostToCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -14433,8 +14165,6 @@ export type RootQueryToCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -15711,14 +15441,6 @@ export type RootQueryToUserRoleConnectionPageInfo = PageInfo & UserRoleConnectio
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']['output']>;
 };
-
-/** Location in the document where the script to be loaded */
-export enum ScriptLoadingGroupLocationEnum {
-  /** A script to be loaded in document at right before the closing `<body>` tag */
-  Footer = 'FOOTER',
-  /** A script to be loaded in document `<head>` tag */
-  Header = 'HEADER'
-}
 
 /** The strategy to use when loading the script */
 export enum ScriptLoadingStrategyEnum {
@@ -17730,8 +17452,6 @@ export type UserToCommentConnectionWhereArgs = {
   search?: InputMaybe<Scalars['String']['input']>;
   /** Comment status to limit results by. */
   status?: InputMaybe<Scalars['String']['input']>;
-  /** One or more Comment Statuses to limit results by */
-  statusIn?: InputMaybe<Array<InputMaybe<CommentStatusEnum>>>;
   /** Include comments for a specific user ID. */
   userId?: InputMaybe<Scalars['ID']['input']>;
 };
@@ -18452,7 +18172,7 @@ export type NcmazFcPostFullVsEditorBlocksNoContentFieldsFragment = { __typename:
   ) | (
     { __typename: 'CoreColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
     & { ' $fragmentRefs'?: { 'CoreColumnsFragmentFragment': CoreColumnsFragmentFragment } }
-  ) | { __typename: 'CoreCommentAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentEditLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentReplyLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCover', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreDetails', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreEmbed', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFile', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFootnotes', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFreeform', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGallery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHeading', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHomeLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHtml', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestPosts', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLegacyWidget', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLoginout', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMediaText', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMissing', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigation', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationSubmenu', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNextpage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreParagraph', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePattern', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthor', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorBiography', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostCommentsForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostExcerpt', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostFeaturedImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePreformatted', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePullquote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryNoResults', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreReadMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreRss', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSearch', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSeparator', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreShortcode', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteLogo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTagline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLinks', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSpacer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTable', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTagCloud', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTemplatePart', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTermDescription', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTextColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVerse', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVideo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreWidgetGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetPoweredByMailpoet', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlockRender', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | (
+  ) | { __typename: 'CoreCommentAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentEditLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentReplyLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCover', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreDetails', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreEmbed', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFile', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFootnotes', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFreeform', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGallery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHeading', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHomeLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHtml', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestPosts', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLegacyWidget', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLoginout', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMediaText', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMissing', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigation', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationSubmenu', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNextpage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreParagraph', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePattern', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthor', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorBiography', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostCommentsForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostExcerpt', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostFeaturedImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePreformatted', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePullquote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryNoResults', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreReadMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreRss', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSearch', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSeparator', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreShortcode', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteLogo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTagline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLinks', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSpacer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTable', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTagCloud', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTemplatePart', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTermDescription', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTextColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVerse', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVideo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreWidgetGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlockRender', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | (
     { __typename: 'NcmazFaustBlockCta', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
     & { ' $fragmentRefs'?: { 'NcmazFaustBlockCtaFragmentFragment': NcmazFaustBlockCtaFragmentFragment } }
   ) | (
@@ -19298,7 +19018,7 @@ export type GetPageQuery = { __typename?: 'RootQuery', page?: { __typename?: 'Pa
     ) | (
       { __typename: 'CoreColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
       & { ' $fragmentRefs'?: { 'CoreColumnsFragmentFragment': CoreColumnsFragmentFragment } }
-    ) | { __typename: 'CoreCommentAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentEditLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentReplyLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCover', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreDetails', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreEmbed', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFile', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFootnotes', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFreeform', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGallery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHeading', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHomeLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHtml', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestPosts', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLegacyWidget', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLoginout', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMediaText', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMissing', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigation', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationSubmenu', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNextpage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreParagraph', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePattern', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthor', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorBiography', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostCommentsForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostExcerpt', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostFeaturedImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePreformatted', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePullquote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryNoResults', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreReadMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreRss', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSearch', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSeparator', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreShortcode', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteLogo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTagline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLinks', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSpacer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTable', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTagCloud', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTemplatePart', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTermDescription', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTextColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVerse', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVideo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreWidgetGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetPoweredByMailpoet', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlockRender', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | (
+    ) | { __typename: 'CoreCommentAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentEditLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentReplyLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCommentsTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreCover', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreDetails', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreEmbed', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFile', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFootnotes', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreFreeform', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGallery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHeading', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHomeLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreHtml', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLatestPosts', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLegacyWidget', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreLoginout', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMediaText', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMissing', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigation', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNavigationSubmenu', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreNextpage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageList', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePageListItem', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreParagraph', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePattern', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthor', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorBiography', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostAuthorName', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostComments', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostCommentsForm', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostContent', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostDate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostExcerpt', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostFeaturedImage', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostNavigationLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTemplate', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTerms', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePostTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePreformatted', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CorePullquote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuery', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryNoResults', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPagination', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNext', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationNumbers', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryPaginationPrevious', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQueryTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreQuote', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreReadMore', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreRss', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSearch', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSeparator', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreShortcode', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteLogo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTagline', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSiteTitle', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLink', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSocialLinks', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreSpacer', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTable', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTagCloud', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTemplatePart', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTermDescription', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreTextColumns', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVerse', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreVideo', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'CoreWidgetGroup', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlock', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | { __typename: 'MailpoetSubscriptionFormBlockRender', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null } | (
       { __typename: 'NcmazFaustBlockCta', renderedHtml?: string | null, clientId?: string | null, parentClientId?: string | null }
       & { ' $fragmentRefs'?: { 'NcmazFaustBlockCtaFragmentFragment': NcmazFaustBlockCtaFragmentFragment } }
     ) | (
