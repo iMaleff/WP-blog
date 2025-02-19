@@ -177,7 +177,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		}
 
 		if (deleteCommentsByIdResult.loading) {
-			toast.loading(T['Deleting comment'] + '...')
+			toast.loading('Удаление комментария...' + '...')
 			return
 		}
 
@@ -191,7 +191,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 
 		if (deleteCommentsByIdResult.data) {
 			toast.dismiss()
-			toast.success(T['Delete comment successfully'])
+			toast.success('Комментарий удален успешно')
 			setDeletedCommentIds([
 				...deletedCommentIds,
 				deleteCommentsByIdResult.data?.deleteComment?.comment?.databaseId || 0,
@@ -209,7 +209,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		}
 
 		if (createNewCommentsResult.loading) {
-			toast.loading(T['Creating comment'] + '...')
+			toast.loading('Создание комментария...' + '...')
 			return
 		}
 
@@ -219,7 +219,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		) {
 			toast.dismiss()
 			toast.error(
-				createNewCommentsResult?.error?.message || 'Create comment failed',
+				createNewCommentsResult?.error?.message || 'Ошибка при создании комментария',
 				{
 					duration: 5500,
 				},
@@ -234,16 +234,13 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 				?.comment as TCommentHasChild | null
 
 			if (newCreated) {
-				toast.success(T['Create comment successfully'] + '!')
+				toast.success('Комментарий создан успешно' + '!')
 			} else {
 				toast.success(
 					(t) => (
 						<div>
-							{
-								T.pageSingle[
-									'Create comment successfully! However, it needs to be approved by the administrator before it will be displayed.'
-								]
-							}
+							{'Комментарий создан успешно! Однако он должен быть одобрен администратором, прежде чем он будет отображаться.'}
+
 							<button
 								className="absolute end-1.5 top-1.5"
 								onClick={() => toast.dismiss(t.id)}
@@ -292,7 +289,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		}
 
 		if (createNewReplyCommentsResult.loading) {
-			toast.loading(T['Replying comment'] + '...')
+			toast.loading('Ответ на комментарий...' + '...')
 			return
 		}
 
@@ -302,7 +299,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		) {
 			toast.dismiss()
 			toast.error(
-				createNewReplyCommentsResult?.error?.message || 'Reply comment failed',
+				createNewReplyCommentsResult?.error?.message || 'Ошибка при ответе на комментарий',
 			)
 			createNewReplyCommentsResult.reset()
 			return
@@ -315,16 +312,12 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 				?.comment as TCommentHasChild | null
 
 			if (newCreated) {
-				toast.success(T['Reply comment successfully'] + '!')
+				toast.success('Ответ на комментарий создан успешно' + '!')
 			} else {
 				toast.success(
 					(t) => (
 						<div>
-							{
-								T.pageSingle[
-									'Create comment successfully! However, it needs to be approved by the administrator before it will be displayed.'
-								]
-							}
+							{'Комментарий создан успешно! Однако он должен быть одобрен администратором, прежде чем он будет отображаться.'}
 							<button
 								className="absolute end-1.5 top-1.5"
 								onClick={() => toast.dismiss(t.id)}
@@ -373,7 +366,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		}
 
 		if (updateCommentByIdResult.loading) {
-			toast.loading(T['Updating comment'] + '...')
+			toast.loading('Обновление комментария...' + '...')
 			return
 		}
 
@@ -383,7 +376,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		) {
 			toast.dismiss()
 			toast.error(
-				updateCommentByIdResult?.error?.message || 'Updating comment failed',
+				updateCommentByIdResult?.error?.message || 'Ошибка при обновлении комментария',
 			)
 			updateCommentByIdResult.reset()
 			return
@@ -391,7 +384,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 
 		if (updateCommentByIdResult.data) {
 			toast.dismiss()
-			toast.success(T['Update comment successfully'])
+			toast.success('Комментарий обновлен успешно')
 			const newUpdated = updateCommentByIdResult.data?.updateComment
 				?.comment as TCommentHasChild
 
@@ -456,7 +449,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		data: CommentSubmitData
 	}) => {
 		if (!isAuthenticated && mustLoggedToComment) {
-			toast.error(T.pageSingle['You must login to comment'] + '!', {
+			toast.error('Вы должны войти в систему, чтобы комментировать' + '!', {
 				duration: 5500,
 			})
 			return
@@ -604,7 +597,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 						id="nc-single-comment"
 						className="text-lg font-semibold text-neutral-800 xl:text-xl dark:text-neutral-200"
 					>
-						{T.pageSingle.Responses} ({commentCount} )
+						Комментарии ({commentCount})
 					</h3>
 					<SingleCommentForm
 						isSuccessfulCreatedComment={

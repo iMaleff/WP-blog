@@ -37,14 +37,14 @@ const PostCardCommentBtn: FC<PostCardCommentBtnProps> = ({
 
 	if (isATagOnSingle) {
 		return (
-			<a href={'#comments'} className={classess} title="Comments">
+			<a href={'#comments'} className={classess} title="Комментарии">
 				{renderContent()}
 			</a>
 		)
 	}
 
 	return (
-		<Link href={`${linkToPost}#comments`} className={classess} title="Comments">
+		<Link href={`${linkToPost}#comments`} className={classess} title="Комментарии">
 			{renderContent()}
 		</Link>
 	)

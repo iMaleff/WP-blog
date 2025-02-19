@@ -235,7 +235,7 @@ const PostCardLikeAction: FC<PostCardLikeActionProps> = ({
 					: 'text-neutral-700 hover:text-rose-600 dark:text-neutral-200 dark:hover:text-rose-400'
 			} `}
 			onClick={handleClickAction}
-			title={isLiked ? 'Unlike' : 'Like this post'}
+			title={isLiked ? 'Убрать лайк' : 'Нравится'}
 		>
 			<div
 				className={`${sizeClassName} flex flex-shrink-0 items-center justify-center rounded-full transition-colors duration-75 ${

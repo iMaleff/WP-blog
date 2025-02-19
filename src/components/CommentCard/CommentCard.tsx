@@ -16,11 +16,8 @@ import { CommentWrapContext } from '@/container/singles/SingleCommentWrap'
 import Loading from '../Button/Loading'
 import toast from 'react-hot-toast'
 import { useLoginModal } from '@/hooks/useLoginModal'
-import getTrans from '@/utils/getTrans'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 import { Delete03Icon, Edit02Icon, MyArrowMoveUpLeftIcon } from '../Icons/Icons'
-
-const T = getTrans()
 
 export type TComment = NcmazFcCommentFullFieldsFragment
 
@@ -149,7 +146,7 @@ const CommentCard: FC<CommentCardProps> = ({
 						</div>
 						{comment.status !== CommentStatusEnum.Approve ? (
 							<span className="text-xs italic text-neutral-700 dark:text-neutral-300">
-								(This comment is pending approval.)
+								(Этот комментарий ожидает одобрения)
 							</span>
 						) : null}
 					</div>
@@ -165,12 +162,12 @@ const CommentCard: FC<CommentCardProps> = ({
 						{comment.status === CommentStatusEnum.Approve ? (
 							<button
 								className={`inline-flex h-8 min-w-[68px] items-center self-start rounded-full bg-neutral-100 px-3 text-neutral-600 hover:bg-teal-50 hover:text-teal-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-teal-200/10 dark:hover:text-teal-400 ${twFocusClass()} `}
-								title="Reply"
+								title="Ответить"
 								onClick={handleClickReplyBtn}
 							>
 								<MyArrowMoveUpLeftIcon className="me-2 h-[18px] w-[18px]" />
 
-								<span className="text-xs leading-none">{T['Reply']}</span>
+								<span className="text-xs leading-none">Ответить</span>
 							</button>
 						) : null}
 
@@ -178,7 +175,7 @@ const CommentCard: FC<CommentCardProps> = ({
 						{isShowDeleteAndEditButton ? (
 							<button
 								className={`inline-flex h-8 min-w-[68px] items-center self-start rounded-full bg-neutral-100 px-3 text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-indigo-100/10 dark:hover:text-indigo-400 ${twFocusClass()} `}
-								title="Edit comment"
+								title="Изменить комментарий"
 								onClick={() => onClickEdit?.(comment)}
 							>
 								{isEditingDatabaseId === comment.databaseId &&
@@ -187,7 +184,7 @@ const CommentCard: FC<CommentCardProps> = ({
 								) : (
 									<Edit02Icon className="me-2 h-4 w-4" />
 								)}
-								<span className="text-xs leading-none">{T['Edit']}</span>
+								<span className="text-xs leading-none">Изменить</span>
 							</button>
 						) : null}
 
@@ -195,7 +192,7 @@ const CommentCard: FC<CommentCardProps> = ({
 						{isShowDeleteAndEditButton ? (
 							<button
 								className={`inline-flex h-8 min-w-[68px] items-center self-start rounded-full bg-neutral-100 px-3 text-neutral-600 hover:bg-rose-100/80 hover:text-rose-600 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-rose-100/10 dark:hover:text-rose-300 ${twFocusClass()} `}
-								title="Delete comment"
+								title="Удалить комментарий"
 								onClick={() => onClickDelete?.(comment)}
 							>
 								{isDeletingDatabaseId === comment.databaseId &&
@@ -204,7 +201,7 @@ const CommentCard: FC<CommentCardProps> = ({
 								) : (
 									<Delete03Icon className="me-2 h-4 w-4" />
 								)}
-								<span className="text-xs leading-none">{T['Delete']}</span>
+								<span className="text-xs leading-none">Удалить</span>
 							</button>
 						) : null}
 					</div>

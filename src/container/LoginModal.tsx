@@ -8,7 +8,6 @@ import { IS_CHISNGHIAX_DEMO_SITE } from '@/contains/site-settings'
 import { useLogin } from '@faustwp/core'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
-import getTrans from '@/utils/getTrans'
 import { useLoginModal } from '@/hooks/useLoginModal'
 import NcModal from '@/components/NcModal/NcModal'
 import { useRouter } from 'next/router'
@@ -19,7 +18,7 @@ const LoginModal: FC<LoginModalProps> = () => {
 	const { login, loading, data, error } = useLogin()
 	const { closeLoginModal, isOpen, urlRiderect } = useLoginModal()
 	const router = useRouter()
-	const T = getTrans()
+	
 
 	useEffect(() => {
 		if (!!data?.generateAuthorizationCode.error) {
@@ -36,7 +35,7 @@ const LoginModal: FC<LoginModalProps> = () => {
 
 		if (!!data?.generateAuthorizationCode.code) {
 			toast.success(
-				'Login successful, system is reloading the page for synchronization...',
+				'Вход выполнен успешно, страница перезагружается для синхронизации...',
 				{
 					position: 'bottom-center',
 					duration: 5000,
@@ -60,13 +59,8 @@ const LoginModal: FC<LoginModalProps> = () => {
 					<Logo className="block w-full text-center" imageClassName="mx-auto" />
 					<div className="text-center">
 						<h2 className="mt-5 text-center text-xl font-semibold leading-9 tracking-tight text-neutral-900 sm:mt-7 md:text-2xl dark:text-neutral-200">
-							{T['Sign in to your account']}
+							Войти в аккаунт
 						</h2>
-						{IS_CHISNGHIAX_DEMO_SITE && (
-							<span className="text-xs text-neutral-500 dark:text-neutral-400">
-								Try sing in with a demo account (demo/demo).
-							</span>
-						)}
 					</div>
 				</div>
 				<div className="mt-5 sm:mx-auto sm:mt-10 sm:w-full sm:max-w-sm">
@@ -79,7 +73,7 @@ const LoginModal: FC<LoginModalProps> = () => {
 									!e.currentTarget.username?.value ||
 									!e.currentTarget.password?.value
 								) {
-									toast.error('Username and password are required!', {
+									toast.error('Требуется ввести имя пользователя и пароль!', {
 										position: 'bottom-center',
 									})
 									return
@@ -94,32 +88,30 @@ const LoginModal: FC<LoginModalProps> = () => {
 						>
 							<div className="grid gap-4">
 								<div className="grid gap-1.5">
-									<Label htmlFor="email">{T.Username}</Label>
+									<Label htmlFor="email">Имя пользователя</Label>
 									<Input
 										id="username"
 										name="username"
-										placeholder="Email or username"
+										placeholder="Email или имя пользователя"
 										autoCapitalize="none"
 										autoComplete="username"
 										autoCorrect="off"
 										type="text"
 										required
-										defaultValue={IS_CHISNGHIAX_DEMO_SITE ? 'demo' : undefined}
 										autoFocus
 										data-autofocus
 									/>
 								</div>
 								<div className="grid gap-1.5">
-									<Label htmlFor="password">{T.Password}</Label>
+									<Label htmlFor="password">Пароль</Label>
 									<Input
 										id="password"
 										type="password"
 										required
-										defaultValue={IS_CHISNGHIAX_DEMO_SITE ? 'demo' : undefined}
 									/>
 								</div>
 								<div className="grid">
-									<ButtonPrimary loading={loading}>{T.Login}</ButtonPrimary>
+									<ButtonPrimary loading={loading}>Войти</ButtonPrimary>
 									{!!errorMessage && (
 										<Error className="mt-2 text-center" error={errorMessage} />
 									)}
@@ -128,24 +120,17 @@ const LoginModal: FC<LoginModalProps> = () => {
 						</form>
 					</div>
 
-					<p className="mt-5 text-center text-sm leading-6 text-neutral-500 sm:mt-10 dark:text-neutral-400">
-						{T['Not a member?']}?{' '}
-						<Link
-							href="/sign-up"
-							className="font-medium text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
-							onClick={closeModal}
-						>
-							{T['Sign up']}!
-						</Link>
-						<span className="mx-1">|</span>
-						<Link
-							href="/reset-password"
-							className="font-medium text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
-							onClick={closeModal}
-						>
-							{T['Lost your password?']}
-						</Link>
-					</p>
+					<div className="mt-10">
+						<p className="text-center text-sm text-neutral-500">
+							<Link
+								className="font-semibold leading-6 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300"
+								href="/reset-password"
+								onClick={closeModal}
+							>
+								Забыли пароль?
+							</Link>
+						</p>
+					</div>
 				</div>
 			</div>
 		)

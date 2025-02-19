@@ -122,7 +122,7 @@ const NcBookmark: FC<NcBookmarkProps> = ({
 
 	const handleClickSaveAction = () => {
 		if (!isReady) {
-			toast.error('Please wait a moment, data is being prepared.')
+			toast.error('Пожалуйста подождите, данные обрабатываются.')
 			return
 		}
 
@@ -133,7 +133,7 @@ const NcBookmark: FC<NcBookmarkProps> = ({
 		}
 
 		if (!viewer?.databaseId) {
-			toast.error('Please wait a moment, data is being prepared.')
+			toast.error('Пожалуйста подождите, данные обрабатываются.')
 			return
 		}
 
@@ -166,7 +166,7 @@ const NcBookmark: FC<NcBookmarkProps> = ({
 	return (
 		<button
 			className={`nc-NcBookmark relative flex items-center justify-center rounded-full ${containerClassName}`}
-			title={isBookmarked ? 'Remove from saved list' : 'Save to reading list'}
+			title={isBookmarked ? 'Убрать из списка для чтения' : 'Добавить в список для чтения'}
 			onClick={handleClickSaveAction}
 		>
 			<MyBookmarkIcon

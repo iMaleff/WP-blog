@@ -213,7 +213,7 @@ const NcmazFaustBlockMagazineClient: WordPressBlock<
 							loading={getPostByVariablesFromSSRResult.loading}
 							onClick={handleClickLoadmore}
 						>
-							{T['Show me more']}
+							Показать ещё
 						</ButtonPrimary>
 					) : null}
 
@@ -222,7 +222,7 @@ const NcmazFaustBlockMagazineClient: WordPressBlock<
 							href={viewAllLinkHref}
 							pattern={showLoadmoreButton ? 'third' : 'primary'}
 						>
-							{T['View all']}
+							Смотреть все
 							<ArrowRightIcon className="ms-2 h-5 w-5 rtl:rotate-180" />
 						</Button>
 					) : null}

@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import NcBookmark, { NcBookmarkProps } from '../NcBookmark/NcBookmark'
-import getTrans from '@/utils/getTrans'
 
-const T = getTrans()
 
 export interface PostCardSaveActionProps
 	extends Omit<NcBookmarkProps, 'containerClassName'> {
@@ -27,12 +25,12 @@ const PostCardSaveAction: FC<PostCardSaveActionProps> = ({
 				<>
 					<span className="hidden text-right sm:block">
 						<span className="line-clamp-1">
-							{readingTime} {T['min read'] ?? 'min read'}
+							{readingTime} мин. чтения
 						</span>
 					</span>
 					<span className="line-clamp-1 block text-right sm:hidden">
 						<span className="line-clamp-1">
-							{readingTime}' {T['read'] ?? 'read'}
+							{readingTime}' чтения
 						</span>
 					</span>
 				</>
