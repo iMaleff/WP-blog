@@ -10,13 +10,11 @@ import { QUERY_GET_USERS } from '@/fragments/queries'
 import { NcmazFcUserFullFieldsFragment } from '@/__generated__/graphql'
 import errorHandling from '@/utils/errorHandling'
 import GraphqlError from './GraphqlError'
-import getTrans from '@/utils/getTrans'
 import ButtonThird from './Button/ButtonThird'
 import { UserSearchIcon } from './Icons/Icons'
 import Avatar from './Avatar/Avatar'
 import { getImageDataFromImageFragment } from '@/utils/getImageDataFromImageFragment'
 
-const T = getTrans()
 
 interface Props {
 	onUpdated: (ids: number[]) => void
@@ -133,7 +131,7 @@ const ModalSelectAuthors: FC<Props> = ({ onUpdated, initIds = [] }) => {
 				{data?.users?.pageInfo.hasNextPage ? (
 					<div className="mt-7 flex justify-center">
 						<ButtonPrimary loading={loading} onClick={handleClickShowMore}>
-							{T['Show me more']}
+							Показать больше
 						</ButtonPrimary>
 					</div>
 				) : null}
@@ -166,7 +164,7 @@ const ModalSelectAuthors: FC<Props> = ({ onUpdated, initIds = [] }) => {
 
 						<UserSearchIcon className="-ms-1.5 me-2 h-5 w-5" />
 						<div>
-							<span>{T.Authors}</span>
+							<span>Авторы</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -176,7 +174,7 @@ const ModalSelectAuthors: FC<Props> = ({ onUpdated, initIds = [] }) => {
 				)}
 				onOpenModal={() => setIdSlecteds(initIds)}
 				contentExtraClass="max-w-4xl"
-				modalTitle={T['Authors']}
+				modalTitle="Авторы"
 				renderContent={renderModalContent}
 				enableFooter={true}
 				renderFooter={(closeModal) => {
@@ -187,7 +185,7 @@ const ModalSelectAuthors: FC<Props> = ({ onUpdated, initIds = [] }) => {
 								onClick={() => setIdSlecteds([])}
 								// sizeClass="py-3 px-4 sm:py-3 sm:px-6"
 							>
-								{T['Clear']}
+								Очистить
 							</Button>
 							<ButtonPrimary
 								onClick={() => {
@@ -196,7 +194,7 @@ const ModalSelectAuthors: FC<Props> = ({ onUpdated, initIds = [] }) => {
 								}}
 								// sizeClass="py-3 px-4 sm:py-3 sm:px-6"
 							>
-								{T['Apply']}
+								Применить
 							</ButtonPrimary>
 						</div>
 					)
@@ -230,7 +228,7 @@ const CardUser: FC<{
 				</h2>
 				<span className="mt-[2px] block text-xs text-neutral-500 dark:text-neutral-400">
 					{registeredDate
-						? T['Member since'] + ' ' + new Date(registeredDate).getFullYear()
+						? 'С момента регистрации' + ' ' + new Date(registeredDate).getFullYear()
 						: ncUserMeta?.ncBio}
 				</span>
 			</div>

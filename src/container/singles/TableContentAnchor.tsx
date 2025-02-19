@@ -1,5 +1,4 @@
 import { MyTask01Icon } from '@/components/Icons/Icons'
-import getTrans from '@/utils/getTrans'
 import { ContentBlock } from '@faustwp/blocks/dist/mjs/components/WordPressBlocksViewer'
 import { flatListToHierarchical } from '@faustwp/core'
 import {
@@ -11,7 +10,6 @@ import {
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 
-const T = getTrans()
 
 type HeadingNode = {
 	tag: string
@@ -127,7 +125,7 @@ const TableContent: React.FC<TableContentProps> = ({
 					id="on-this-page-title"
 					className="font-display text-sm font-medium text-slate-900 dark:text-white"
 				>
-					{T['On this page']}
+					На этой странице
 				</h2>
 				<div>
 					<ol className="mt-4 space-y-3 text-sm">

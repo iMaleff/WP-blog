@@ -3,7 +3,6 @@ import {
 	PostSearchIcon,
 	UserSearchIcon,
 } from '@/components/Icons/Icons'
-import getTrans from '@/utils/getTrans'
 import Link from 'next/link'
 import React, { FC, useEffect, useState } from 'react'
 
@@ -12,7 +11,6 @@ interface TabProps {
 	search: string
 }
 
-const T = getTrans()
 const TABS: {
 	tab: TabProps['currentTab']
 	label: string
@@ -20,17 +18,17 @@ const TABS: {
 }[] = [
 	{
 		tab: 'posts',
-		label: T['Articles'],
+		label: 'Статьи',
 		svgIcon: <PostSearchIcon className="mb-2.5 h-7 w-7" />,
 	},
 	{
 		tab: 'categories',
-		label: T['Categories'],
+		label: 'Категории',
 		svgIcon: <CategoriesIcon className="mb-2.5 h-7 w-7" />,
 	},
 	{
 		tab: 'authors',
-		label: T['Authors'],
+		label: 'Авторы',
 		svgIcon: <UserSearchIcon className="mb-2.5 h-7 w-7" />,
 	},
 ]

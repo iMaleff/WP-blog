@@ -5,7 +5,6 @@ import CommentCard, {
 } from '@/components/CommentCard/CommentCard'
 import CommentCardSkeleton from '@/components/CommentCard/CommentCardSkeleton'
 import CommentCardFake from '@/components/CommentCard/CommentCardFake'
-import getTrans from '@/utils/getTrans'
 import { CommentSubmitData } from './SingleCommentForm'
 
 export interface SingleCommentListsProps {
@@ -36,7 +35,7 @@ const SingleCommentLists: FC<SingleCommentListsProps> = ({
 	onSubmitFormReply,
 	onCancelFormReply,
 }) => {
-	const T = getTrans()
+
 
 	const renderCommentCard = (
 		comment: TCommentHasChild,
@@ -137,7 +136,7 @@ const SingleCommentLists: FC<SingleCommentListsProps> = ({
 			{hasNextPage ? (
 				<div className="mt-8 flex items-center justify-center">
 					<ButtonPrimary onClick={onLoadmoreComments} loading={loading}>
-						{T.pageSingle['Show more comments']}
+						Показать больше комментариев
 					</ButtonPrimary>
 				</div>
 			) : null}

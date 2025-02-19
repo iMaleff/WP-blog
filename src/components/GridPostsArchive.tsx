@@ -4,11 +4,10 @@ import Empty from './Empty'
 import Card11Skeleton from './Card11/Card11Skeleton'
 import Card11 from './Card11/Card11'
 import ButtonPrimary from './Button/ButtonPrimary'
-import getTrans from '@/utils/getTrans'
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import Button from './Button/Button'
 
-const T = getTrans()
+
 
 interface Props {
 	posts: NcmazFcPostFullFieldsFragment[] | null
@@ -52,7 +51,7 @@ const GridPostsArchive: FC<Props> = ({
 			{showLoadmore ? (
 				<div className="mt-12 flex justify-center lg:mt-14">
 					<ButtonPrimary loading={loading} onClick={onClickLoadmore}>
-						{T['Show me more']}
+						Показать больше
 					</ButtonPrimary>
 				</div>
 			) : null}
@@ -67,7 +66,7 @@ const GridPostsArchive: FC<Props> = ({
 						disabled={!showPrevPagination}
 					>
 						<ArrowLeftIcon className="me-2 h-5 w-5 rtl:rotate-180" />
-						{T['Prev']}
+						Предыдущий
 					</Button>
 					<Button
 						pattern="third"
@@ -75,7 +74,7 @@ const GridPostsArchive: FC<Props> = ({
 						onClick={onClickNext}
 						disabled={!showNextPagination}
 					>
-						{T['Next']}
+						Следующий
 						<ArrowRightIcon className="ms-2 h-5 w-5 rtl:rotate-180" />
 					</Button>
 				</div>

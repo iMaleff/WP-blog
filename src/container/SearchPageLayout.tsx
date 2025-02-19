@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 import React, { FC } from 'react'
 import Tab from './SearchPageTab'
 import { TCategoryCardFull } from '@/components/CardCategory1/CardCategory1'
-import getTrans from '@/utils/getTrans'
+
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 
 interface Props {
@@ -26,7 +26,6 @@ const SearchPageLayout: FC<Props> = ({
 	const router = useRouter()
 	const search = router.query.search?.[0] || ''
 
-	const T = getTrans()
 
 	const getCurrentTab = () => {
 		let currentTab: 'posts' | 'categories' | 'authors' = 'posts'
@@ -71,7 +70,7 @@ const SearchPageLayout: FC<Props> = ({
 							<Input
 								id="search-input"
 								type="search"
-								placeholder={T.pageSearch['Type and press enter']}
+								placeholder={'Введите и нажмите Enter'}
 								className="border-opacity-0 text-base shadow-md dark:!bg-neutral-800"
 								sizeClass="h-16 ps-14 py-4 pe-3 sm:pe-5 md:ps-16"
 								fontClass="text-base text-neutral-800 dark:text-neutral-200"

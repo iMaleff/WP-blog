@@ -3,13 +3,11 @@ import NcModal from '@/components/NcModal/NcModal'
 import Button from '@/components/Button/Button'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import ButtonPrimary from './Button/ButtonPrimary'
-import getTrans from '@/utils/getTrans'
 import { SearchIcon } from './Icons/Icons'
 import Input from './Input/Input'
 import { Description, Field, Label } from '@headlessui/react'
 import clsx from 'clsx'
 
-const T = getTrans()
 
 interface Props {
 	onUpdated: (k: string) => void
@@ -35,7 +33,7 @@ const ModalSelectKeyword: FC<Props> = ({ onUpdated, initText = '' }) => {
 			>
 				<Field>
 					<Label className="text-sm/6 font-medium">
-						{T['Enter keyword to search']}
+						Введите ключевое слово для поиска
 					</Label>
 					<Description className="text-sm/6 text-slate-400"></Description>
 					<Input
@@ -78,7 +76,7 @@ const ModalSelectKeyword: FC<Props> = ({ onUpdated, initText = '' }) => {
 
 						<SearchIcon className="-ms-1.5 me-2 h-5 w-5" />
 						<div>
-							<span>{T.Keyword}</span>
+							<span>Ключевое слово для поиска</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -88,14 +86,14 @@ const ModalSelectKeyword: FC<Props> = ({ onUpdated, initText = '' }) => {
 				)}
 				onOpenModal={() => setKeyword(initText)}
 				contentExtraClass="max-w-2xl"
-				modalTitle={T['Keyword']}
+				modalTitle="Ключевое слово для поиска"
 				renderContent={renderModalContent}
 				enableFooter={true}
 				renderFooter={(closeModal) => {
 					return (
 						<div className="flex items-center justify-between">
 							<Button pattern="link" onClick={() => setKeyword('')}>
-								{T['Clear']}
+								Очистить
 							</Button>
 							<ButtonPrimary
 								onClick={() => {
@@ -103,7 +101,7 @@ const ModalSelectKeyword: FC<Props> = ({ onUpdated, initText = '' }) => {
 									closeModal()
 								}}
 							>
-								{T['Apply']}
+								Применить
 							</ButtonPrimary>
 						</div>
 					)

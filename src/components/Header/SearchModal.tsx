@@ -19,7 +19,6 @@ import {
 	UserSearchIcon,
 } from '../Icons/Icons'
 import clsx from 'clsx'
-import getTrans from '@/utils/getTrans'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 import Empty from '../Empty'
 import { gql } from '@/__generated__'
@@ -33,7 +32,6 @@ import MyImage from '../MyImage'
 import PostTypeFeaturedIcon from '../PostTypeFeaturedIcon/PostTypeFeaturedIcon'
 import { useRouter } from 'next/router'
 
-const T = getTrans()
 
 interface PersonType {
 	name: string
@@ -45,25 +43,25 @@ interface PersonType {
 const quickActions: PersonType[] = [
 	{
 		type: 'quick-action',
-		name: T['Search posts'],
+		name: 'Поиск постов',
 		icon: PostSearchIcon,
 		uri: '/search/posts/',
 	},
 	{
 		type: 'quick-action',
-		name: T['Filter posts by'],
+		name: 'Фильтр постов',
 		icon: FilterVerticalIcon,
 		uri: '/posts?search=',
 	},
 	{
 		type: 'quick-action',
-		name: T['Search authors'],
+		name: 'Поиск авторов',
 		icon: UserSearchIcon,
 		uri: '/search/authors/',
 	},
 	{
 		type: 'quick-action',
-		name: T['Search categories'],
+		name: 'Поиск категорий',
 		icon: CategoriesIcon,
 		uri: '/search/categories/',
 	},
@@ -202,7 +200,7 @@ const SearchModal: FC<Props> = ({ renderTrigger, triggerClassName = '' }) => {
 											<ComboboxInput
 												autoFocus
 												className="h-12 w-full border-0 bg-transparent pe-4 ps-11 text-sm text-gray-900 placeholder:text-gray-400 focus:ring-0 dark:text-gray-100 dark:placeholder:text-gray-300"
-												placeholder={T['Type to search...']}
+												placeholder="Поиск..."
 												onChange={_.debounce(handleSetSearchValue, 200)}
 												onBlur={() => setQuery('')}
 											/>
@@ -264,7 +262,7 @@ const SearchModal: FC<Props> = ({ renderTrigger, triggerClassName = '' }) => {
 										{query === '' && (
 											<li className="p-2">
 												<h2 className="mb-2 mt-4 px-3 text-xs font-medium text-gray-500 dark:text-gray-300">
-													{T['Recommended searches']}
+													Рекомендуемые поиски
 												</h2>
 
 												<ul className="text-sm text-gray-700 dark:text-gray-300">

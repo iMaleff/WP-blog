@@ -7,7 +7,7 @@ import ButtonPrimary from '../Button/ButtonPrimary'
 import { Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
-import getTrans from '@/utils/getTrans'
+
 
 const MAX_TAGS_LENGTH =
 	NC_SITE_SETTINGS['submissions-settings']?.max_categories_allowed || 5
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const CategoriesInput: FC<Props> = ({ onChange, defaultValue }) => {
-	const T = getTrans()
+
 
 	const [queryGetCategories, { loading, error, data, fetchMore, called }] =
 		useLazyQuery(QUERY_GET_CATEGORIES, {
@@ -155,7 +155,7 @@ const CategoriesInput: FC<Props> = ({ onChange, defaultValue }) => {
 							<button
 								className="ms-1 flex items-center justify-center px-1 text-base hover:text-neutral-900 dark:hover:text-neutral-50"
 								onClick={() => handleRemoveTag(cat)}
-								title={T.pageSubmission['Remove category']}
+								title="Удалить категорию"
 							>
 								<XMarkIcon className="h-4 w-4" />
 							</button>
@@ -172,7 +172,7 @@ const CategoriesInput: FC<Props> = ({ onChange, defaultValue }) => {
 							type="button"
 							disabled={isMax}
 						>
-							{`${T.pageSubmission['Add categories']} (${categories.length}/${MAX_TAGS_LENGTH})`}
+							{`Добавить категории (${categories.length}/${MAX_TAGS_LENGTH})`}
 						</button>
 					</li>
 				</ul>
@@ -182,7 +182,7 @@ const CategoriesInput: FC<Props> = ({ onChange, defaultValue }) => {
 						className="absolute inset-x-0 top-full z-50 mt-4 space-y-5 rounded-2xl bg-white p-5 shadow-lg ring-1 ring-black/[0.03] dark:bg-neutral-800"
 					>
 						<h3 className="text-xl font-semibold">
-							{T.pageSubmission.Categories}
+							Категории
 						</h3>
 						<div className="w-full border-b border-neutral-300 dark:border-neutral-700" />
 						{!!error && <p className="text-red-500">{error.message}</p>}
@@ -225,7 +225,7 @@ const CategoriesInput: FC<Props> = ({ onChange, defaultValue }) => {
 										onClick={handleClickShowMore}
 										fontSize="text-sm font-medium"
 									>
-										{T.pageSubmission['Load more categories']}
+										Загрузить больше категорий
 									</ButtonPrimary>
 								</div>
 							</>

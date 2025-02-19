@@ -7,11 +7,9 @@ import Card11 from '@/components/Card11/Card11'
 import Card10V2 from '@/components/Card10/Card10V2'
 import MySlider from '@/components/MySlider'
 import { SectionMagazine1Props } from './SectionMagazine1'
-import getTrans from '@/utils/getTrans'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Link, { LinkProps } from 'next/link'
 
-const T = getTrans()
 
 export interface SectionSliderPostsProps extends SectionMagazine1Props {
 	postCardName?: 'card4' | 'card7' | 'card9' | 'card10' | 'card10V2' | 'card11'
@@ -67,7 +65,7 @@ const SectionSliderPosts: FC<SectionSliderPostsProps> = ({
 							href={viewAllLinkHref}
 							className="absolute inset-0 flex h-full w-full items-center justify-center rounded-3xl border-2 border-neutral-200 p-2 text-base font-medium underline transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:border-neutral-500 dark:hover:bg-neutral-800"
 						>
-							{T['View all']}
+							Посмотреть все
 							<ArrowRightIcon className="ms-2.5 h-5 w-5 rtl:rotate-180" />
 						</Link>
 					</div>
@@ -83,7 +81,7 @@ const SectionSliderPosts: FC<SectionSliderPostsProps> = ({
 							href={viewAllLinkHref}
 							className="absolute inset-0 flex h-full w-full items-center justify-center rounded-3xl border-2 border-neutral-200 p-2 text-base font-medium underline transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:border-neutral-500 dark:hover:bg-neutral-800"
 						>
-							{T['View all']}
+							Посмотреть все
 							<ArrowRightIcon className="ms-2.5 h-5 w-5 rtl:rotate-180" />
 						</Link>
 					</div>
@@ -96,7 +94,7 @@ const SectionSliderPosts: FC<SectionSliderPostsProps> = ({
 				href={viewAllLinkHref}
 				className="relative flex h-full w-full items-center justify-center rounded-3xl border-2 border-neutral-200 p-2 text-base font-medium underline transition-colors hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:border-neutral-500 dark:hover:bg-neutral-800"
 			>
-				{T['View all']}
+				Посмотреть все
 				<ArrowRightIcon className="ms-2.5 h-5 w-5 rtl:rotate-180" />
 			</Link>
 		)

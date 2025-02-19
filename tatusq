@@ -1,0 +1,22 @@
+[1mdiff --git a/src/components/Button/Button.tsx b/src/components/Button/Button.tsx[m
+[1mindex 49a6183..d1bb2f6 100644[m
+[1m--- a/src/components/Button/Button.tsx[m
+[1m+++ b/src/components/Button/Button.tsx[m
+[36m@@ -99,7 +99,7 @@[m [mconst Button: FC<ButtonProps> = ({[m
+ 				title={title}[m
+ 			>[m
+ 				{loading && <Loading />}[m
+[31m-				{children || `Перейти`}[m
+[32m+[m				[32m{children || `Показать следующие`}[m
+ 			</Link>[m
+ 		)[m
+ 	}[m
+[36m@@ -113,7 +113,7 @@[m [mconst Button: FC<ButtonProps> = ({[m
+ 			title={title}[m
+ 		>[m
+ 			{loading && <Loading />}[m
+[31m-			{children || `Следующие`}[m
+[32m+[m			[32m{children || `Показать все`}[m
+ 		</button>[m
+ 	)[m
+ }[m

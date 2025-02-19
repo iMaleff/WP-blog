@@ -9,7 +9,6 @@ import {
 	GetReadingListPageQuery,
 	NcgeneralSettingsFieldsFragmentFragment,
 } from '@/__generated__/graphql'
-import getTrans from '@/utils/getTrans'
 import Heading from '@/components/Heading/Heading'
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from '@/contains/menu'
 import { GetStaticPropsContext } from 'next'
@@ -26,7 +25,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/solid'
 import { REVALIDATE_TIME } from '@/contains/contants'
 
 const PageContact = () => {
-	const T = getTrans()
+
 	const info = NC_SITE_SETTINGS.contact_page?.my_contact_info
 
 	const [mutationAddSubscriber, { data, loading, error, reset, called }] =
@@ -110,7 +109,7 @@ const PageContact = () => {
 						const user_email = formData.get('user_email') as string
 						const message = formData.get('message') as string
 						if (!user_full_name || !user_email || !message) {
-							toast.error(T['Please fill all fields'])
+							toast.error('Пожалуйста, заполните все поля')
 							return
 						}
 						// check valid email
@@ -119,7 +118,7 @@ const PageContact = () => {
 								/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
 							)
 						) {
-							toast.error(T['Email are required!'])
+							toast.error('Email обязателен!')
 							return
 						}
 						mutationAddSubscriber({
@@ -132,7 +131,7 @@ const PageContact = () => {
 					}}
 				>
 					<label className="block">
-						<Label htmlFor="user_full_name">{T['Full name']}</Label>
+						<Label htmlFor="user_full_name">Имя</Label>
 
 						<Input
 							name="user_full_name"
@@ -143,7 +142,7 @@ const PageContact = () => {
 						/>
 					</label>
 					<label className="block">
-						<Label htmlFor="user_email">{T['Email address']}</Label>
+						<Label htmlFor="user_email">Email</Label>
 
 						<Input
 							required
@@ -154,7 +153,7 @@ const PageContact = () => {
 						/>
 					</label>
 					<label className="block">
-						<Label htmlFor="message">{T['Message']}</Label>
+						<Label htmlFor="message">Сообщение</Label>
 
 						<Textarea
 							name="message"
@@ -165,7 +164,7 @@ const PageContact = () => {
 						/>
 					</label>
 					<ButtonPrimary type="submit" loading={loading}>
-						<span>{T['Send Message']}</span>
+						<span>Отправить сообщение</span>
 						<PaperAirplaneIcon className="ms-2 h-5 w-5 -rotate-[30deg]" />
 					</ButtonPrimary>
 				</form>
@@ -180,7 +179,7 @@ const PageContact = () => {
 							href="/"
 						>
 							<ArrowLeftIcon className="me-1 inline-block h-4 w-4" />
-							{T['Back to home']}
+							На главную
 						</Link>
 					</div>
 				) : null}

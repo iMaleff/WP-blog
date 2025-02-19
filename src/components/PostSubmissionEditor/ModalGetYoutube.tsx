@@ -3,7 +3,6 @@ import ButtonSecondary from '@/components/Button/ButtonSecondary'
 import Input from '@/components/Input/Input'
 import Label from '@/components/Label/Label'
 import NcModal from '@/components/NcModal/NcModal'
-import getTrans from '@/utils/getTrans'
 import { FC, useState } from 'react'
 import Button from '../Button/Button'
 
@@ -18,7 +17,7 @@ const ModalGetYoutube: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 	const [width, setWidth] = useState(640)
 	const [height, setHeight] = useState(480)
 
-	const T = getTrans()
+
 
 	const handleClickSubmitForm = (e: any) => {
 		e.preventDefault()
@@ -39,7 +38,7 @@ const ModalGetYoutube: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 			>
 				<div className="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2">
 					<div className="col-span-2">
-						<Label>{T.pageSubmission['Youtube URL']}</Label>
+						<Label>'Youtube URL'</Label>
 						<Input
 							required
 							className="mt-1"
@@ -51,7 +50,7 @@ const ModalGetYoutube: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 						/>
 					</div>
 					<div>
-						<Label>{T.Width}</Label>
+						<Label>'Ширина'</Label>
 						<Input
 							required
 							className="mt-1"
@@ -64,7 +63,7 @@ const ModalGetYoutube: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 						/>
 					</div>
 					<div>
-						<Label>{T.Height}</Label>
+						<Label>'Высота'</Label>
 						<Input
 							required
 							className="mt-1"
@@ -80,9 +79,9 @@ const ModalGetYoutube: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 
 				<div className="mt-4 flex justify-between space-x-3">
 					<Button pattern="link" type="button" onClick={onCloseModal}>
-						{T.Cancel}
+						{'Отменить'}
 					</Button>
-					<ButtonPrimary type="submit">{T.Apply}</ButtonPrimary>
+					<ButtonPrimary type="submit">{'Применить'}</ButtonPrimary>
 				</div>
 			</form>
 		)
@@ -95,7 +94,7 @@ const ModalGetYoutube: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 			renderContent={renderContent}
 			onCloseModal={onCloseModal}
 			contentExtraClass="max-w-screen-sm"
-			modalTitle={T.pageSubmission['Youtube URL']}
+			modalTitle={'Youtube URL'}
 		/>
 	)
 }

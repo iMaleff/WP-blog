@@ -5,9 +5,8 @@ import Link from 'next/link'
 import { FragmentType } from '@/__generated__'
 import { NC_USER_FULL_FIELDS_FRAGMENT } from '@/fragments'
 import { getUserDataFromUserCardFragment } from '@/utils/getUserDataFromUserCardFragment'
-import getTrans from '@/utils/getTrans'
 
-const T = getTrans()
+
 
 export interface CardAuthor2WhiteProps extends CardAuthor2Props {}
 
@@ -45,7 +44,7 @@ const CardAuthor2White: FC<CardAuthor2WhiteProps> = ({
 								·
 							</span>
 							<span className="opacity-0 transition-opacity group-hover:opacity-100">
-								{readingTime} {T['min read'] ?? 'min read'}
+								{readingTime} мин. чтения
 							</span>
 						</>
 					)}

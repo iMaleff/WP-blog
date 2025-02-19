@@ -21,7 +21,7 @@ import Iframe from './Iframe'
 //
 import MenuBar from './MenuBar'
 import MyBubbleMenu from './MyBubbleMenu'
-import getTrans from '@/utils/getTrans'
+
 
 interface Props {
 	onUpdate: (editor: Editor) => void
@@ -29,7 +29,7 @@ interface Props {
 }
 
 const TiptapEditor: FC<Props> = ({ onUpdate, defaultContent = '' }) => {
-	const T = getTrans()
+
 
 	const Image = TiptapImage.extend({
 		renderHTML({ node, HTMLAttributes }) {
@@ -56,7 +56,7 @@ const TiptapEditor: FC<Props> = ({ onUpdate, defaultContent = '' }) => {
 				linkOnPaste: true,
 			}),
 			Placeholder.configure({
-				placeholder: T.pageSubmission['Write your post content here…'],
+				placeholder: 'Напишите ваш пост здесь…',
 				showOnlyCurrent: false,
 			}),
 			TextAlign.configure({

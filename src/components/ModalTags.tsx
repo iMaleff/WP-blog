@@ -15,14 +15,13 @@ import { getTagDataFromTagFragment } from '@/utils/getTagDataFromTagFragment'
 import { NC_TAG_SHORT_FIELDS_FRAGMENT } from '@/fragments'
 import errorHandling from '@/utils/errorHandling'
 import GraphqlError from './GraphqlError'
-import getTrans from '@/utils/getTrans'
 import { TagIcon } from './Icons/Icons'
 
 export interface ModalTagsProps {}
 
 const ModalTags: FC<ModalTagsProps> = ({}) => {
 	const [refetchTimes, setRefetchTimes] = useState(0)
-	const T = getTrans()
+	
 
 	const [queryGetTags, { loading, error, data, fetchMore, refetch }] =
 		useLazyQuery(QUERY_GET_TAGS, {
@@ -121,7 +120,7 @@ const ModalTags: FC<ModalTagsProps> = ({}) => {
 				{data?.tags?.pageInfo.hasNextPage ? (
 					<div className="mt-7 flex justify-center">
 						<ButtonPrimary loading={loading} onClick={handleClickShowMore}>
-							{T['Show me more']}
+							Показать больше
 						</ButtonPrimary>
 					</div>
 				) : null}
@@ -145,8 +144,8 @@ const ModalTags: FC<ModalTagsProps> = ({}) => {
 						<TagIcon className="-ms-1.5 me-2 h-5 w-5" />
 
 						<div>
-							<span className="hidden sm:inline">{T['Other tags']}</span>
-							<span className="inline sm:hidden">{T.Tags}</span>
+							<span className="hidden sm:inline">Другие теги</span>
+							<span className="inline sm:hidden">Теги</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -154,7 +153,7 @@ const ModalTags: FC<ModalTagsProps> = ({}) => {
 						/>
 					</Button>
 				)}
-				modalTitle={T['Discover other tags']}
+				modalTitle="Другие теги"
 				renderContent={renderModalContent}
 			/>
 		</div>

@@ -24,9 +24,8 @@ import { useRouter } from 'next/router'
 import { useLogout } from '@faustwp/core'
 import CreateBtn from '@/components/Header/CreateBtn'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
-import getTrans from '@/utils/getTrans'
 import { SearchIconBtn } from '@/components/Header/HeaderSearch'
-const T = getTrans()
+
 
 interface NavigationItem {
 	name:
@@ -58,33 +57,33 @@ export type TDashBoardEditProfileTab =
 const navigation: NavigationItem[] = [
 	{
 		name: 'posts',
-		title: T['Posts'],
+		title: 'Статьи',
 		href: '/dashboard/posts/published',
 		icon: FolderIcon,
 		children: [
 			{
 				name: 'published',
-				title: T['Published'],
+				title: 'Опубликованные',
 				href: '/dashboard/posts/published',
 			},
 			{
 				name: 'pending',
-				title: T['Pending'],
+				title: 'Ожидающие',
 				href: '/dashboard/posts/pending',
 			},
 			{
 				name: 'schedule',
-				title: T['Scheduled'],
+				title: 'Запланированные',
 				href: '/dashboard/posts/schedule',
 			},
 			{
 				name: 'draft',
-				title: T['Draft'],
+				title: 'Черновики',
 				href: '/dashboard/posts/draft',
 			},
 			{
 				name: 'trash',
-				title: T['Trash'],
+				title: 'Удаленные',
 				href: '/dashboard/posts/trash',
 			},
 		],
@@ -92,40 +91,40 @@ const navigation: NavigationItem[] = [
 
 	{
 		name: 'edit profile',
-		title: T['Edit profile'],
+		title: 'Редактировать профиль',
 		href: '/dashboard/edit-profile/general',
 		icon: UserCircleIcon,
 		children: [
 			{
 				name: 'general',
-				title: T['General'],
+				title: 'Общие',
 				href: '/dashboard/edit-profile/general',
 			},
 			{
 				name: 'profile',
-				title: T['Profile'],
+				title: 'Профиль',
 				href: '/dashboard/edit-profile/profile',
 			},
 			{
 				name: 'password',
-				title: T['Password'],
+				title: 'Пароль',
 				href: '/dashboard/edit-profile/password',
 			},
 			{
 				name: 'socials',
-				title: T['Socials'],
+				title: 'Социальные сети',
 				href: '/dashboard/edit-profile/socials',
 			},
 			{
 				name: 'delete-account',
-				title: T['Delete account'],
+				title: 'Удалить учетную запись',
 				href: '/dashboard/edit-profile/delete-account',
 			},
 		],
 	},
 	{
 		name: 'documents',
-		title: T['Documents'],
+		title: 'Документы',
 		href: NC_SITE_SETTINGS.document_page?.enable
 			? NC_SITE_SETTINGS.document_page?.uri || ''
 			: '',
@@ -242,7 +241,7 @@ export default function DashboardLayout({ children }: Props) {
 									className="h-6 w-6 shrink-0 text-neutral-400 group-hover:text-primary-600 dark:text-neutral-300 dark:group-hover:text-neutral-200"
 									aria-hidden="true"
 								/>
-								{T['Sign out']}
+								Выйти
 							</a>
 						</li>
 					</ul>
@@ -263,7 +262,7 @@ export default function DashboardLayout({ children }: Props) {
 				}}
 			>
 				<label htmlFor="search-field" className="sr-only">
-					Search
+					Поиск
 				</label>
 				<MagnifyingGlassIcon
 					className="pointer-events-none absolute inset-y-0 start-0 h-full w-5 text-neutral-400"
@@ -272,7 +271,7 @@ export default function DashboardLayout({ children }: Props) {
 				<input
 					id="search-field"
 					className="block h-full w-full border-0 bg-transparent py-0 pe-0 ps-8 text-neutral-900 placeholder:text-neutral-400 focus:ring-0 sm:text-sm dark:text-white"
-					placeholder="Search..."
+					placeholder="Поиск..."
 					type="search"
 					name="search"
 				/>
@@ -327,7 +326,7 @@ export default function DashboardLayout({ children }: Props) {
 												className="-m-2.5 p-2.5"
 												onClick={() => setSidebarOpen(false)}
 											>
-												<span className="sr-only">Close sidebar</span>
+												<span className="sr-only">Закрыть боковую панель</span>
 												<XMarkIcon
 													className="h-6 w-6 text-white"
 													aria-hidden="true"
@@ -358,7 +357,7 @@ export default function DashboardLayout({ children }: Props) {
 								className="-m-2.5 p-2.5 text-neutral-700 lg:hidden dark:text-neutral-300"
 								onClick={() => setSidebarOpen(true)}
 							>
-								<span className="sr-only">Open sidebar</span>
+								<span className="sr-only">Открыть боковую панель</span>
 								<Bars3Icon
 									className="h-[1.65rem] w-[1.65rem]"
 									aria-hidden="true"

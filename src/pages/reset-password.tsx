@@ -4,7 +4,6 @@ import Error from '@/components/Error'
 import Input from '@/components/Input/Input'
 import Label from '@/components/Label/Label'
 import LoginLayout from '@/container/login/LoginLayout'
-import getTrans from '@/utils/getTrans'
 import { useMutation } from '@apollo/client'
 import Link from 'next/link'
 import { FormEvent, useState } from 'react'
@@ -12,7 +11,7 @@ import toast from 'react-hot-toast'
 
 export default function ResetPassWord() {
 	const [username, setUsername] = useState('')
-	const T = getTrans()
+
 
 	const [mutationsendPasswordResetEmail, { loading, data, error, called }] =
 		useMutation(
@@ -46,7 +45,7 @@ export default function ResetPassWord() {
 	const handleRegister = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		if (!username) {
-			toast.error(T['Email or username are required!'], {
+			toast.error('Email или имя пользователя обязательны!', {
 				position: 'bottom-center',
 			})
 			return
@@ -62,7 +61,7 @@ export default function ResetPassWord() {
 		return (
 			<div className="text-center">
 				<p className="text-sm text-green-600">
-					{T['A password reset link has been sent to your email!']}
+					Ссылка для сброса пароля отправлена на ваш email!
 				</p>
 
 				<p className="mt-4 text-center text-sm leading-6 text-neutral-500 dark:text-neutral-400">
@@ -70,14 +69,14 @@ export default function ResetPassWord() {
 						href="/"
 						className="text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
 					>
-						{T['Back to home']}
+						На главную
 					</Link>
 					<span className="mx-1">|</span>
 					<Link
 						href="/login"
 						className="text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
 					>
-						{T['Login']}
+						Вход
 					</Link>
 				</p>
 			</div>
@@ -91,10 +90,10 @@ export default function ResetPassWord() {
 					<form onSubmit={handleRegister}>
 						<div className="grid gap-4">
 							<div className="grid gap-1.5">
-								<Label htmlFor="username">{T['Email or username']}</Label>
+								<Label htmlFor="username">Email или имя пользователя</Label>
 								<Input
 									id="username"
-									placeholder={T['Email or username']}
+									placeholder="Email или имя пользователя"
 									autoCapitalize="none"
 									autoCorrect="off"
 									type="text"
@@ -105,7 +104,7 @@ export default function ResetPassWord() {
 
 							<div className="grid">
 								<ButtonPrimary loading={loading}>
-									{T['Reset password']}
+									Сбросить пароль
 								</ButtonPrimary>
 
 								{!!error?.message && (
@@ -121,7 +120,7 @@ export default function ResetPassWord() {
 						href="/login"
 						className="text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
 					>
-						{T['Login']}
+						Вход
 					</Link>
 				</p>
 			</>
@@ -132,7 +131,7 @@ export default function ResetPassWord() {
 		<LoginLayout
 			isResetPasswordPage
 			rightBtn={{
-				text: T['Sign in'],
+				text: 'Вход',
 				href: '/login',
 			}}
 		>

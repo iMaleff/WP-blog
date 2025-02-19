@@ -28,7 +28,6 @@ import {
 } from '@/__generated__/graphql'
 import errorHandling from '@/utils/errorHandling'
 import GraphqlError from '@/components/GraphqlError'
-import getTrans from '@/utils/getTrans'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -52,7 +51,7 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 	commentCount: commentCountProp,
 }) => {
 	const endOfNodeCommentListRef = useRef<HTMLDivElement>(null)
-	const T = getTrans()
+
 	const { discussion_settings } = NC_SITE_SETTINGS
 	const mustLoggedToComment = discussion_settings?.must_logged_in_to_comment
 	//

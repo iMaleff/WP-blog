@@ -2,10 +2,9 @@ import { FC } from 'react'
 import MyImage from '../MyImage'
 import WidgetHeading1 from '../WidgetHeading1/WidgetHeading1'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
-import getTrans from '@/utils/getTrans'
 
 const socials = NC_SITE_SETTINGS.site_socials
-const T = getTrans()
+
 
 interface WidgetSocialsFollowProps {
 	className?: string
@@ -16,7 +15,7 @@ const WidgetSocialsFollow: FC<WidgetSocialsFollowProps> = ({
 }) => {
 	return (
 		<div className={`nc-WidgetSocialsFollow overflow-hidden ${className}`}>
-			<WidgetHeading1 title={'👋 ' + T['We are on socials']} />
+			<WidgetHeading1 title={'👋 Мы в социальных сетях'} />
 			<div className="grid grid-cols-2">
 				{socials?.map((social, idex) => (
 					<a

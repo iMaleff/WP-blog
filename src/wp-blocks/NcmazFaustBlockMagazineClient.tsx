@@ -87,7 +87,7 @@ const NcmazFaustBlockMagazineClient: WordPressBlock<
 			},
 		})
 
-	const T = getTrans()
+		
 
 	const [dataInitPosts_state, setDataInitPosts_state] = useState<
 		TPostCard[] | null

@@ -11,7 +11,6 @@ import { QUERY_GET_CATEGORIES } from '@/fragments/queries'
 import { NcmazFcCategoryFullFieldsFragmentFragment } from '@/__generated__/graphql'
 import errorHandling from '@/utils/errorHandling'
 import GraphqlError from './GraphqlError'
-import getTrans from '@/utils/getTrans'
 import { CategoryIcon } from './Icons/Icons'
 
 export interface ModalCategoriesProps {}
@@ -19,8 +18,7 @@ export interface ModalCategoriesProps {}
 const ModalCategories: FC<ModalCategoriesProps> = () => {
 	const [refetchTimes, setRefetchTimes] = useState(0)
 
-	const T = getTrans()
-
+	
 	const [queryGetCategories, { loading, error, data, fetchMore, refetch }] =
 		useLazyQuery(QUERY_GET_CATEGORIES, {
 			variables: { first: 20 },
@@ -37,7 +35,7 @@ const ModalCategories: FC<ModalCategoriesProps> = () => {
 				}
 				setRefetchTimes(refetchTimes + 1)
 
-				refetch()
+				refetch()	
 			},
 		})
 
@@ -107,7 +105,7 @@ const ModalCategories: FC<ModalCategoriesProps> = () => {
 				{data?.categories?.pageInfo.hasNextPage ? (
 					<div className="mt-7 flex justify-center">
 						<ButtonPrimary loading={loading} onClick={handleClickShowMore}>
-							{T['Show me more']}
+							Показать больше
 						</ButtonPrimary>
 					</div>
 				) : null}
@@ -130,8 +128,8 @@ const ModalCategories: FC<ModalCategoriesProps> = () => {
 						<CategoryIcon className="-ms-1.5 me-2 h-5 w-5" />
 
 						<div>
-							<span className="hidden sm:inline">{T['Other categories']}</span>
-							<span className="inline sm:hidden">{T.Categories}</span>
+							<span className="hidden sm:inline">Другие категории</span>
+							<span className="inline sm:hidden">Категории</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -139,7 +137,7 @@ const ModalCategories: FC<ModalCategoriesProps> = () => {
 						/>
 					</Button>
 				)}
-				modalTitle={T['Discover other categories']}
+				modalTitle="Другие категории"
 				renderContent={renderModalContent}
 				enableFooter={false}
 			/>

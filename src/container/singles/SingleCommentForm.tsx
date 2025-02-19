@@ -6,7 +6,6 @@ import { CommentWrapContext } from './SingleCommentWrap'
 import { useLoginModal } from '@/hooks/useLoginModal'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/stores/store'
-import getTrans from '@/utils/getTrans'
 import Label from '@/components/Label/Label'
 import Input from '@/components/Input/Input'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
@@ -42,7 +41,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 	isSuccessfulCreatedComment,
 }) => {
 	const textareaRef = React.useRef<HTMLTextAreaElement>(null)
-	const T = getTrans()
+
 	//
 	const { openLoginModal } = useLoginModal()
 	const { isReady, isAuthenticated } = useSelector(
@@ -98,7 +97,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 			onSubmit={(e) => {
 				e.preventDefault()
 				if (isLoading || !isReady) {
-					toast.error(T['Please wait a moment before trying again'] + '!')
+					toast.error('Пожалуйста, подождите некоторое время перед повторной попыткой!' + '!')
 					return
 				}
 				if (!isAuthenticated && mustLoggedToComment) {
@@ -113,7 +112,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 				if (!isAuthenticated && !mustLoggedToComment) {
 					// check if user fill in the name and email
 					if (!email || !username) {
-						toast.error(T['Username and email are required'] + '!')
+						toast.error('Имя и email обязательны для заполнения!' + '!')
 						return
 					}
 				}
@@ -128,7 +127,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 			className={`nc-SingleCommentForm ${className}`}
 		>
 			<Textarea
-				placeholder={T.pageSingle['Add to discussion']}
+				placeholder={'Добавить в обсуждение'}
 				ref={textareaRef}
 				required
 				defaultValue={defaultValue}
@@ -143,9 +142,9 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 			{showNameAndEmailInput ? (
 				<div className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2">
 					<div className="grid gap-1.5">
-						<Label htmlFor="username">{T.Username}*</Label>
+						<Label htmlFor="username">Имя*</Label>
 						<Input
-							placeholder="Your name"
+							placeholder="Ваше имя"
 							id="username"
 							type="text"
 							autoComplete="username"
@@ -153,14 +152,14 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 						/>
 					</div>
 					<div className="grid gap-1.5">
-						<Label htmlFor="email">{T.Email}*</Label>
+						<Label htmlFor="email">Email*</Label>
 						<Input
 							id="email"
 							autoCapitalize="none"
 							autoComplete="email"
 							autoCorrect="off"
 							type="email"
-							placeholder="hello@123.mail"
+							placeholder="hello@mail.com"
 							required
 						/>
 					</div>
@@ -169,7 +168,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 
 			<div className="mt-2.5 flex flex-wrap gap-2">
 				<ButtonPrimary loading={isLoading} type="submit">
-					{T.Submit}
+					Отправить
 				</ButtonPrimary>
 				<Button
 					type="button"
@@ -182,7 +181,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 						}
 					}}
 				>
-					{T.Cancel}
+					Отменить
 				</Button>
 			</div>
 		</form>

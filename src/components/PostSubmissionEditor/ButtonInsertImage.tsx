@@ -5,7 +5,6 @@ import { EditorItemImageAttrs } from './MenuBar'
 import ModalUploadImage from './ModalUploadImage'
 import isImageFromUrl from '@/utils/IsImageFromUrl'
 import { PencilIcon } from '@heroicons/react/24/outline'
-import getTrans from '@/utils/getTrans'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
@@ -33,7 +32,7 @@ const ButtonInsertImage: FC<ButtonInsertImageProps> = ({
 	let [isOpen, setIsOpen] = useState(false)
 	let [isLoading, setisLoading] = useState(false)
 
-	const T = getTrans()
+
 	//
 	function closeModal() {
 		setIsOpen(false)
@@ -49,9 +48,7 @@ const ButtonInsertImage: FC<ButtonInsertImageProps> = ({
 		isImageFromUrl(url)
 			.then(value => {
 				if (!value) {
-					toast.error(
-						T.pageSubmission['The url is not an image, please try again.'],
-					)
+					toast.error('URL не является изображением, пожалуйста, попробуйте снова.')
 					return
 				}
 				onChangeImage({ sourceUrl: url, altText: alt, id: '' })
@@ -117,7 +114,7 @@ const ButtonInsertImage: FC<ButtonInsertImageProps> = ({
 														childClassName="w-5 h-5"
 													/>
 												) : (
-													<span>{T.pageSubmission['Upload a file']}</span>
+													<span>Загрузить файл</span>
 												)}
 											</div>
 										</div>
@@ -154,15 +151,15 @@ const ButtonInsertImage: FC<ButtonInsertImageProps> = ({
 							<>
 								<div
 									className="absolute start-2.5 top-2.5 z-20 flex cursor-pointer items-center gap-1 rounded-md bg-white p-1.5 pl-2 pr-2.5 text-xs font-medium text-black opacity-0 transition-opacity group-hover:opacity-100"
-									title={T['Edit image']}
+									title="Редактировать изображение"
 									onClick={openModal}
 								>
 									<PencilIcon className="h-4 w-4" />
-									{T['Edit']}
+									Редактировать
 								</div>
 								<div
 									className="absolute end-1 top-1 z-20 flex cursor-pointer items-center gap-1 rounded-full bg-white p-1.5 text-xs text-black"
-									title={T['Delete image']}
+									title="Удалить изображение"
 									onClick={handleFileDelete}
 								>
 									<XMarkIcon className="h-4 w-4" />

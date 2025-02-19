@@ -15,7 +15,6 @@ import { QUERY_GET_POSTS_BY } from "@/fragments/queries";
 import { PostDataFragmentType } from "@/data/types";
 import errorHandling from "@/utils/errorHandling";
 import GraphqlError from "@/components/GraphqlError";
-import getTrans from "@/utils/getTrans";
 
 //
 
@@ -25,7 +24,6 @@ const ReadingListPageChild: FaustPage<GetReadingListPageQuery> = (props) => {
     (state: RootState) => state.viewer.authorizedUser
   );
   const [refetchTimes, setRefetchTimes] = useState(0);
-  const T = getTrans();
 
   // useLazyQuery get reading list posts
   const [queryGetPostsByPostIn, getPostsByPostInResult] = useLazyQuery(
@@ -197,7 +195,7 @@ const ReadingListPageChild: FaustPage<GetReadingListPageQuery> = (props) => {
       {hasNextPage ? (
         <div className="mt-12 lg:mt-16 flex justify-center">
           <ButtonPrimary loading={loading} onClick={handleClickLoadmore}>
-            {T["Show me more"]}
+            Показать больше
           </ButtonPrimary>
         </div>
       ) : null}

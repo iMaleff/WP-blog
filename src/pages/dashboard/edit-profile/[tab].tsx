@@ -29,11 +29,9 @@ import errorHandling from '@/utils/errorHandling'
 import DashboardLayout, {
 	TDashBoardEditProfileTab,
 } from '@/container/DashboardLayout'
-import getTrans from '@/utils/getTrans'
 import { decode } from 'html-entities'
 import Button from '@/components/Button/Button'
 
-const T = getTrans()
 
 const Page: FaustPage<{}> = () => {
 	const { isReady, isAuthenticated, viewer } = useAuth()
@@ -178,9 +176,7 @@ const Page: FaustPage<{}> = () => {
 				notifyOnNetworkStatusChange: true,
 				fetchPolicy: 'network-only',
 				onCompleted: (data) => {
-					toast.success(
-						`${T['Account deleted successfully!']} ${T['Returning to the home page!']}`,
-					)
+					toast.success('Аккаунт успешно удален!')
 					logout('/')
 				},
 				onError: (error) => {
@@ -329,10 +325,10 @@ const Page: FaustPage<{}> = () => {
 				<div className="NcmazAccountPage-GeneralForm space-y-5 sm:space-y-6 md:sm:space-y-7">
 					<div>
 						<h2 className="text-xl font-semibold capitalize">
-							{T['Profile settings']}
+							Настройки профиля
 						</h2>
 						<span className="mt-2.5 block text-sm text-neutral-500 dark:text-neutral-400">
-							{T['Update your username and manage your account']}.
+							Обновите ваше имя пользователя и управляйте своим аккаунтом.
 						</span>
 					</div>
 					<div className="w-24 border-b border-neutral-200 dark:border-neutral-700"></div>
@@ -340,7 +336,7 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__Profile-picture">
-						<Label>{T['Profile picture']}</Label>
+						<Label>Аватар</Label>
 						<ButtonInsertImage
 							defaultImage={avatarImage}
 							className="mt-1.5 max-w-40"
@@ -351,7 +347,7 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__Cover-picture">
-						<Label>{T['Cover photo']}</Label>
+						<Label>Фотография профиля</Label>
 						<ButtonInsertImage
 							defaultImage={coverImage}
 							className="mt-1.5 flex-1"
@@ -361,7 +357,7 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__firstName">
-						<Label>{T['First Name']}</Label>
+						<Label>Имя</Label>
 						<Input
 							className="mt-1.5"
 							defaultValue={viewer?.firstName || ''}
@@ -371,7 +367,7 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__lastName">
-						<Label>{T['Last Name']}</Label>
+						<Label>Фамилия</Label>
 						<Input
 							className="mt-1.5"
 							defaultValue={viewer?.lastName || ''}
@@ -382,7 +378,7 @@ const Page: FaustPage<{}> = () => {
 					{/* ---- */}
 					<div className="EditProfileForm__nickName">
 						<Label>
-							{T.Nickname} ({T.required})
+							Никнейм (обязательно)
 						</Label>
 						<Input
 							className="mt-1.5"
@@ -394,14 +390,14 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__Biographical">
-						<Label>{T['Biographical Info']}</Label>
+						<Label>Биография</Label>
 						<span className="text-xs text-neutral-500 dark:text-neutral-400">
-							{T['Biographical Info, this will show up in the author page']}.
+							Биография, это будет показано на странице автора.
 						</span>
 						<Textarea
 							rows={5}
 							className="mt-1.5"
-							placeholder={T['Something about yourself in a few word']}
+							placeholder={'Несколько слов о себе'}
 							defaultValue={viewerProfile.description || ''}
 							ref={descriptionRef}
 						/>
@@ -409,14 +405,9 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__shortBio">
-						<Label>{T['Short Bio']}</Label>
+						<Label>Краткая биография</Label>
 						<span className="text-xs text-neutral-500 dark:text-neutral-400">
-							{
-								T[
-									'A short Bio (e.g. occupation), this will show up in the author cards'
-								]
-							}
-							.
+							Краткая биография (например, профессия), это будет показано на карточках авторов.
 						</span>
 						<Input
 							className="mt-1.5"
@@ -428,7 +419,7 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div className="EditProfileForm__Website">
-						<Label>{T.Website}</Label>
+						<Label>Сайт</Label>
 						<div className="mt-1.5 flex">
 							<span className="inline-flex items-center rounded-s-2xl border border-e-0 border-neutral-200 bg-neutral-50 px-3 text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">
 								<GlobeAltIcon className="h-6 w-6" />
@@ -452,17 +443,17 @@ const Page: FaustPage<{}> = () => {
 				<div className="NcmazAccountPage-GeneralForm space-y-5 sm:space-y-6 md:sm:space-y-7">
 					<div>
 						<h2 className="text-xl font-semibold capitalize">
-							{T['General settings']}
+							Общие настройки
 						</h2>
 						<span className="mt-2.5 block text-sm text-neutral-500 dark:text-neutral-400">
-							{T['Update your username and manage your account']}.
+							Обновите ваше имя пользователя и управляйте своим аккаунтом.
 						</span>
 					</div>
 					<div className="w-24 border-b border-neutral-200 dark:border-neutral-700"></div>
 					{/* ---- */}
 
 					<div>
-						<Label>{T['Display Name']}</Label>
+						<Label>Имя пользователя</Label>
 						<Input
 							className="mt-1.5"
 							defaultValue={viewerProfile.name || ''}
@@ -473,7 +464,7 @@ const Page: FaustPage<{}> = () => {
 
 					{/* ---- */}
 					<div>
-						<Label>{T.Email}</Label>
+						<Label>Email</Label>
 						<div className="mt-1.5 flex">
 							<span className="inline-flex items-center rounded-s-2xl border border-e-0 border-neutral-200 bg-neutral-50 px-2.5 text-sm text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">
 								<EnvelopeIcon className="h-6 w-6" />
@@ -498,14 +489,10 @@ const Page: FaustPage<{}> = () => {
 				<div className="NcmazAccountPage-deleteAccount space-y-5 sm:space-y-6 md:sm:space-y-7">
 					<div>
 						<h2 className="text-xl font-semibold capitalize text-red-500">
-							{T['Delete account']}
+							Удалить аккаунт
 						</h2>
 						<span className="mt-2.5 block text-sm text-neutral-500 dark:text-neutral-400">
-							{
-								T[
-									'Delete your account and all data. This action is irreversible.'
-								]
-							}
+							Удалите свой аккаунт и все данные. Это действие необратимо.
 						</span>
 					</div>
 					<div className="w-24 border-b border-neutral-200 dark:border-neutral-700"></div>
@@ -513,9 +500,9 @@ const Page: FaustPage<{}> = () => {
 
 					<div>
 						<Label>
-							{T['To confirm, type']}
-							{` `} "Delete my account" {` `}
-							{T['in the box below']}
+							Для подтверждения, введите
+							{` `} "Удалить аккаунт" {` `}
+							в поле ниже
 						</Label>
 						<Input
 							className="mt-1.5"
@@ -540,17 +527,17 @@ const Page: FaustPage<{}> = () => {
 				<div className="NcmazAccountPage-GeneralForm space-y-5 sm:space-y-6 md:sm:space-y-7">
 					<div>
 						<h2 className="text-xl font-semibold capitalize">
-							{T['Password settings']}
+							Настройки пароля
 						</h2>
 						<span className="mt-2.5 block text-sm text-neutral-500 dark:text-neutral-400">
-							{T['Update your password.']}
+							Обновите ваш пароль.
 						</span>
 					</div>
 					<div className="w-24 border-b border-neutral-200 dark:border-neutral-700"></div>
 					{/* ---- */}
 
 					<div className="ChangePasswordForm__newPass">
-						<Label>{T['New password']}</Label>
+						<Label>Новый пароль</Label>
 						<Input
 							required
 							type="password"
@@ -559,12 +546,12 @@ const Page: FaustPage<{}> = () => {
 							ref={passwordRef}
 						/>
 						<span className="text-xs text-neutral-500 dark:text-neutral-400">
-							{T['Password must be at least 6 characters']}
+							Пароль должен быть не менее 6 символов
 						</span>
 					</div>
 					{/* ---- */}
 					<div className="ChangePasswordForm__ConfirmPass">
-						<Label>{T['Confirm password']}</Label>
+						<Label>Подтвердите пароль</Label>
 						<Input
 							required
 							type="password"
@@ -584,10 +571,10 @@ const Page: FaustPage<{}> = () => {
 				<div className="NcmazAccountPage-GeneralForm space-y-5 sm:space-y-6 md:sm:space-y-7">
 					<div>
 						<h2 className="text-xl font-semibold capitalize">
-							{T['Social settings']}
+							Настройки социальных сетей
 						</h2>
 						<span className="mt-2.5 block text-sm text-neutral-500 dark:text-neutral-400">
-							{T['Add elsewhere links to your profile.']}
+							Добавьте ссылки на другие места в ваш профиль.
 						</span>
 					</div>
 					<div className="w-24 border-b border-neutral-200 dark:border-neutral-700"></div>
@@ -596,7 +583,7 @@ const Page: FaustPage<{}> = () => {
 					<div className="SocialsProfileForm__fieldsWrap grid grid-cols-1 gap-5 sm:grid-cols-2">
 						{/* ---- Youtube */}
 						<div className="SocialsProfileForm__Youtube">
-							<Label>Youtube</Label>
+								<Label>Youtube</Label>
 							<div className="mt-1.5 flex">
 								<span className="inline-flex items-center rounded-s-2xl border border-e-0 border-neutral-200 bg-neutral-50 px-2.5 text-sm text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">
 									<svg
@@ -939,7 +926,7 @@ const Page: FaustPage<{}> = () => {
 									loading={LOADING}
 									onClick={handleSubmitForm}
 								>
-									{T['Update profile']}
+									Обновить профиль
 								</ButtonPrimary>
 							) : (
 								<Button
@@ -951,7 +938,7 @@ const Page: FaustPage<{}> = () => {
 										LOADING || confirmDeleteText !== 'Delete my account'
 									}
 								>
-									{T['Delete account']}
+									Удалить аккаунт
 								</Button>
 							)}
 						</div>

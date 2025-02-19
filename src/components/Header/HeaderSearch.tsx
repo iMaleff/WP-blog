@@ -1,18 +1,17 @@
-import getTrans from '@/utils/getTrans'
 import { useRouter } from 'next/router'
 import Input from '../Input/Input'
 import { SearchIcon } from '../Icons/Icons'
 import SearchModal from './SearchModal'
 
 export const HeaderSearchForm = () => {
-	const T = getTrans()
+	
 	const renderTrigger = () => {
 		return (
 			<div className="group relative cursor-pointer">
 				<button className="absolute inset-0"></button>
 				<Input
 					type="text"
-					placeholder={T['Type to search...']}
+					placeholder="Поиск..."
 					className="!w-40 pr-5 group-hover:border-neutral-300 md:!w-full md:pr-10 dark:placeholder:text-neutral-400 dark:group-hover:border-neutral-400"
 					sizeClass="h-[42px] pl-4 py-3"
 					rounded="rounded-full"
@@ -30,7 +29,7 @@ export const HeaderSearchForm = () => {
 
 export const HeaderSearchForm2 = () => {
 	const router = useRouter()
-	const T = getTrans()
+	
 	const renderTrigger = () => {
 		return (
 			<form
@@ -42,7 +41,7 @@ export const HeaderSearchForm2 = () => {
 			>
 				<Input
 					type="search"
-					placeholder={T['Type to search...']}
+					placeholder="Поиск..."
 					className="!w-40 pr-5 group-hover:border-neutral-300 md:!w-full md:pr-10 dark:placeholder:text-neutral-400 dark:group-hover:border-neutral-400"
 					sizeClass="h-[42px] pl-4 py-3"
 					name="search"

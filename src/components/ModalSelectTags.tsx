@@ -14,10 +14,9 @@ import { getTagDataFromTagFragment } from '@/utils/getTagDataFromTagFragment'
 import { NC_TAG_SHORT_FIELDS_FRAGMENT } from '@/fragments'
 import errorHandling from '@/utils/errorHandling'
 import GraphqlError from './GraphqlError'
-import getTrans from '@/utils/getTrans'
 import ButtonThird from './Button/ButtonThird'
 import { TagIcon } from './Icons/Icons'
-const T = getTrans()
+
 
 interface Props {
 	onUpdated: (ids: number[]) => void
@@ -143,7 +142,7 @@ const ModalSelectTags: FC<Props> = ({ onUpdated, initIds = [] }) => {
 				{data?.tags?.pageInfo.hasNextPage ? (
 					<div className="mt-7 flex justify-center">
 						<ButtonPrimary loading={loading} onClick={handleClickShowMore}>
-							{T['Show me more']}
+							Показать больше
 						</ButtonPrimary>
 					</div>
 				) : null}
@@ -176,7 +175,7 @@ const ModalSelectTags: FC<Props> = ({ onUpdated, initIds = [] }) => {
 						)}
 						<TagIcon className="-ms-1.5 me-2 h-5 w-5" />
 						<div>
-							<span>{T['Tags']}</span>
+							<span>Теги</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -185,7 +184,7 @@ const ModalSelectTags: FC<Props> = ({ onUpdated, initIds = [] }) => {
 					</Button>
 				)}
 				onOpenModal={() => setIdSlecteds(initIds)}
-				modalTitle={T['Tags']}
+				modalTitle="Теги"
 				renderContent={renderModalContent}
 				enableFooter={true}
 				renderFooter={(closeModal) => {
@@ -196,7 +195,7 @@ const ModalSelectTags: FC<Props> = ({ onUpdated, initIds = [] }) => {
 								onClick={() => setIdSlecteds([])}
 								// sizeClass="py-3 px-4 sm:py-3 sm:px-6"
 							>
-								{T['Clear']}
+								Очистить
 							</Button>
 							<ButtonPrimary
 								onClick={() => {
@@ -205,7 +204,7 @@ const ModalSelectTags: FC<Props> = ({ onUpdated, initIds = [] }) => {
 								}}
 								// sizeClass="py-3 px-4 sm:py-3 sm:px-6"
 							>
-								{T['Apply']}
+								Применить
 							</ButtonPrimary>
 						</div>
 					)

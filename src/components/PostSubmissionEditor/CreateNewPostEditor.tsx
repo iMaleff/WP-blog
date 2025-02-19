@@ -76,7 +76,7 @@ const CreateNewPostEditor: FC<Props> = ({
 	const client = getApolloAuthClient()
 	//
 	const router = useRouter()
-	const T = getTrans()
+
 	const localStoragePath = isSubmittingPage
 		? 'submission_page__new'
 		: 'submission_page__edit__' + (isEditingPostId || 'none')
@@ -179,7 +179,7 @@ const CreateNewPostEditor: FC<Props> = ({
 			client,
 			onCompleted: (data) => {
 				setIsSubmitSuccess(true)
-				toast.success(T.pageSubmission['Created new post successfully'])
+				toast.success('Создание нового поста прошло успешно')
 
 				if (data.createPost?.post?.status !== 'publish') {
 					router.push(
@@ -205,7 +205,7 @@ const CreateNewPostEditor: FC<Props> = ({
 		client,
 		onCompleted: (data) => {
 			setIsSubmitSuccess(true)
-			toast.success(T.pageSubmission['Update post successfully'])
+			toast.success('Пост успешно обновлен')
 			setNewUpdatedUri(`/?p=${data?.updatePost?.post?.databaseId}`)
 		},
 		onError: (error) => {
@@ -283,12 +283,7 @@ const CreateNewPostEditor: FC<Props> = ({
 	}
 
 	const onSubmmitMutation = (status: PostStatusEnum) => {
-		// for site chisnghiax demo - please delete this code on your site
-		if (IS_CHISNGHIAX_DEMO_SITE) {
-			toast.error('Sorry, post submission is disabled on the demo site!')
-			return
-		}
-
+		
 		if (isSubmittingPage) {
 			mutationCreatePost({
 				variables: {
@@ -443,7 +438,7 @@ const CreateNewPostEditor: FC<Props> = ({
 				<div className="mx-auto w-full max-w-screen-md space-y-5">
 					<div className="">
 						<Label className="text-sm">
-							{T.pageSubmission['Featured image']}
+							Изображение
 						</Label>
 						<ButtonInsertImage
 							defaultImage={featuredImage}
@@ -495,8 +490,8 @@ const CreateNewPostEditor: FC<Props> = ({
 								disabled={LOADING}
 							>
 								{!!postOptionsData.timeSchedulePublication
-									? T.pageSubmission['Schedule']
-									: T.pageSubmission['Publish']}
+									? 'Запланировать'
+									: 'Опубликовать'}
 							</ButtonPrimary>
 							<Button
 								fontSize="text-base font-medium"
@@ -506,8 +501,8 @@ const CreateNewPostEditor: FC<Props> = ({
 								pattern="third"
 							>
 								{isEditingPage
-									? T.pageSubmission['Move to draft']
-									: T.pageSubmission['Save draft']}
+									? 'Переместить в черновик'
+									: 'Сохранить черновик'}
 							</Button>
 							<PostOptionsBtn
 								defaultData={postOptionsData}
@@ -530,7 +525,7 @@ const CreateNewPostEditor: FC<Props> = ({
 									pattern="link"
 									sizeClass="py-3 px-4"
 								>
-									{T.pageSubmission['Revert new changes']}
+									{'Вернуться к предыдущим изменениям'}
 								</Button>
 							) : null}
 						</div>
@@ -546,32 +541,29 @@ const CreateNewPostEditor: FC<Props> = ({
 						<div className="py-5">
 							<div className="font-medium">
 								{
-									T.pageSubmission[
-										'Congratulations! You have successfully updated the post!'
-									]
+									'Поздравляем! Вы успешно обновили пост!'
+																			
 								}
 							</div>
 							<div className="mt-2.5 text-sm text-neutral-700">
 								{
-									T.pageSubmission[
-										'These changes will be applied to the post in about 15 minutes.'
-									]
+									'Эти изменения будут применены к посту в течение 15 минут.'
 								}{' '}
 								<br />
-								{T.pageSubmission['You can']}{' '}
+								{'Вы можете'}
 								<Link
 									href={`/preview${newUpdatedUri}&preview=true&previewPathname=post`}
 									className="font-medium underline"
 								>
-									{T.pageSubmission['preview the post']}
+									{'предварительно просматривать пост'}
 								</Link>{' '}
-								{T.pageSubmission['by clicking the button below.']}
+								{'нажав на кнопку ниже.'}
 							</div>
 						</div>
 					)}
 					onCloseModal={() => setNewUpdatedUri('')}
 					contentExtraClass="max-w-screen-sm"
-					modalTitle="Update post successfully"
+					modalTitle="Пост успешно обновлен"
 					renderFooter={() => (
 						<div className="flex justify-end">
 							<ButtonPrimary
@@ -580,7 +572,7 @@ const CreateNewPostEditor: FC<Props> = ({
 									setNewUpdatedUri('')
 								}}
 							>
-								{T.pageSubmission['Preview post']}
+									{'Предварительно просматривать пост'}
 							</ButtonPrimary>
 						</div>
 					)}

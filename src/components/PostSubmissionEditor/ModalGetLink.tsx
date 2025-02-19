@@ -4,7 +4,6 @@ import ButtonThird from '@/components/Button/ButtonThird'
 import Input from '@/components/Input/Input'
 import Label from '@/components/Label/Label'
 import NcModal from '@/components/NcModal/NcModal'
-import getTrans from '@/utils/getTrans'
 import { FC, useEffect, useState } from 'react'
 import Button from '../Button/Button'
 
@@ -21,7 +20,7 @@ const ModalGetLink: FC<ModalGetLinkProps> = ({
 	onCloseModal,
 	defaultLink,
 }) => {
-	const T = getTrans()
+	
 	const [urlState, setUrlState] = useState('')
 	const [openInNewTab, setOpenInNewTab] = useState(false)
 
@@ -55,7 +54,7 @@ const ModalGetLink: FC<ModalGetLinkProps> = ({
 						onClick={closeModal}
 						// sizeClass="px-4 py-2 sm:px-5"
 					>
-						{T.Cancel}
+						{'Отменить'}
 					</Button>
 					<div className="flex gap-2.5">
 						<Button
@@ -63,13 +62,13 @@ const ModalGetLink: FC<ModalGetLinkProps> = ({
 							onClick={handleRemoveLink}
 							// sizeClass="px-4 py-2 sm:px-5"
 						>
-							{T.pageSubmission['Unset link']}
+							{'Удалить ссылку'}
 						</Button>
 						<ButtonPrimary
 							onClick={handleApply}
 							// sizeClass="px-4 py-2 sm:px-5"
 						>
-							{T.Apply}
+							{'Применить'}
 						</ButtonPrimary>
 					</div>
 				</div>

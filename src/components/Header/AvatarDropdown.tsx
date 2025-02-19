@@ -29,7 +29,6 @@ import { getImageDataFromImageFragment } from '@/utils/getImageDataFromImageFrag
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 import CircleLoading from '../Loading/CircleLoading'
 import { useRouter } from 'next/router'
-import getTrans from '@/utils/getTrans'
 import { UserIcon } from '../Icons/Icons'
 
 interface Props {
@@ -43,7 +42,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 	const { viewer } = useSelector((state: RootState) => state.viewer)
 	const { openLoginModal } = useLoginModal()
 	const router = useRouter()
-	const T = getTrans()
+	
 
 	useEffect(() => {
 		// mot so truong hop ngoai le, can phai reload lai trang
@@ -94,7 +93,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<PlusCircleIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T['Create']}</p>
+					<p className="text-sm font-medium">Создать</p>
 				</div>
 			</Link>
 		)
@@ -110,7 +109,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<TwUserIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T['Edit profile']}</p>
+					<p className="text-sm font-medium">Редактировать профиль</p>
 				</div>
 			</Link>
 		)
@@ -159,7 +158,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					</svg>
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T['My Posts']}</p>
+					<p className="text-sm font-medium">Мои посты</p>
 				</div>
 			</Link>
 		)
@@ -175,7 +174,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<HeartIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T.Wishlist}</p>
+					<p className="text-sm font-medium">Избранное</p>
 				</div>
 			</Link>
 		)
@@ -191,7 +190,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<BookmarkIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<span className="text-sm font-medium">{T['Reading list']}</span>
+					<span className="text-sm font-medium">Список чтения</span>
 				</div>
 			</Link>
 		)
@@ -205,7 +204,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 						<LightBulbIcon className="h-6 w-6" />
 					</div>
 					<div className="ms-4">
-						<p className="text-sm font-medium">{T['Dark theme']}</p>
+						<p className="text-sm font-medium">Темная тема</p>
 					</div>
 				</div>
 				<SwitchDarkMode2 />
@@ -227,7 +226,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<FireIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T.Helps}</p>
+					<p className="text-sm font-medium">Помощь</p>
 				</div>
 			</Link>
 		)
@@ -243,7 +242,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<UserPlusIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<span className="text-sm font-medium">{T['Sign up']}</span>
+					<span className="text-sm font-medium">Зарегистрироваться</span>
 				</div>
 			</Link>
 		)
@@ -259,7 +258,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<FingerPrintIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T.Login}</p>
+					<p className="text-sm font-medium">Войти</p>
 				</div>
 			</button>
 		)
@@ -275,7 +274,7 @@ export default function AvatarDropdown({ className = '' }: Props) {
 					<PowerIcon className="h-6 w-6" />
 				</div>
 				<div className="ms-4">
-					<p className="text-sm font-medium">{T['Log out']}</p>
+					<p className="text-sm font-medium">Выйти</p>
 				</div>
 			</button>
 		)

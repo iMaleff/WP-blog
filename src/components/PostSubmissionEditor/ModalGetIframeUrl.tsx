@@ -3,7 +3,6 @@ import ButtonSecondary from '@/components/Button/ButtonSecondary'
 import Input from '@/components/Input/Input'
 import Label from '@/components/Label/Label'
 import NcModal from '@/components/NcModal/NcModal'
-import getTrans from '@/utils/getTrans'
 import { FC, useState } from 'react'
 import Button from '../Button/Button'
 
@@ -16,7 +15,7 @@ interface Props {
 const ModalGetIframeUrl: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 	const [iframeUrl, setIframeUrl] = useState('')
 
-	const T = getTrans()
+	
 
 	const handleClickSubmitForm = (e: any) => {
 		e.preventDefault()
@@ -28,7 +27,7 @@ const ModalGetIframeUrl: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 		return (
 			<form action="/#" onSubmit={handleClickSubmitForm}>
 				<Label>
-					{T.pageSubmission['Type the URL of the iframe you want to embed']}
+					{'Введите URL iframe, который вы хотите вставить'}
 				</Label>
 				<Input
 					required
@@ -41,9 +40,9 @@ const ModalGetIframeUrl: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 
 				<div className="mt-6 flex justify-between space-x-3">
 					<Button pattern="link" type="button" onClick={onCloseModal}>
-						{T.Cancel}
+						{'Отменить'}
 					</Button>
-					<ButtonPrimary type="submit">{T.Apply}</ButtonPrimary>
+					<ButtonPrimary type="submit">{'Применить'}</ButtonPrimary>
 				</div>
 			</form>
 		)
@@ -56,7 +55,7 @@ const ModalGetIframeUrl: FC<Props> = ({ show, onCloseModal, onSubmit }) => {
 			renderContent={renderContent}
 			onCloseModal={onCloseModal}
 			contentExtraClass="max-w-screen-sm"
-			modalTitle={T.pageSubmission['Iframe URL']}
+			modalTitle={'URL iframe'}
 		/>
 	)
 }

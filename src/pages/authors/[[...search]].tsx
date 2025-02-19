@@ -16,7 +16,6 @@ import { useLazyQuery } from '@apollo/client'
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from '@/contains/menu'
 import PageLayout from '@/container/PageLayout'
 import errorHandling from '@/utils/errorHandling'
-import getTrans from '@/utils/getTrans'
 import { UsersIcon } from '@heroicons/react/24/outline'
 
 const Page: FaustPage<AuthorsPageQueryGetUsersBySearchQuery> = (props) => {
@@ -24,7 +23,7 @@ const Page: FaustPage<AuthorsPageQueryGetUsersBySearchQuery> = (props) => {
 	const initUsers = props.data?.users?.nodes
 	const initPageInfo = props.data?.users?.pageInfo
 	const search = router.query.search?.[0] || ''
-	const T = getTrans()
+
 
 	const [getUsersBySearch, getUsersBySearchResult] = useLazyQuery(
 		gql(` 
@@ -119,7 +118,7 @@ const Page: FaustPage<AuthorsPageQueryGetUsersBySearchQuery> = (props) => {
 			headerMenuItems={props.data?.primaryMenuItems?.nodes || []}
 			footerMenuItems={props.data?.footerMenuItems?.nodes || []}
 			pageFeaturedImageUrl={null}
-			pageTitle={T['Authors']}
+			pageTitle={'Авторы'}
 			generalSettings={
 				props.data?.generalSettings as NcgeneralSettingsFieldsFragmentFragment
 			}
@@ -130,10 +129,10 @@ const Page: FaustPage<AuthorsPageQueryGetUsersBySearchQuery> = (props) => {
 						<header>
 							<div className="mb-2 flex items-center gap-2 text-sm font-medium text-neutral-500">
 								<UsersIcon className="h-5 w-5" />
-								<span className="">{T['Explore']}</span>
+								<span className="">Авторы</span>
 							</div>
 							<h1 className="block text-2xl font-semibold capitalize sm:text-3xl lg:text-4xl">
-								{T['Authors']}
+								Авторы
 							</h1>
 						</header>
 
@@ -164,7 +163,7 @@ const Page: FaustPage<AuthorsPageQueryGetUsersBySearchQuery> = (props) => {
 										loading={loading}
 										onClick={handleClickShowMore}
 									>
-										{T['Show me more']}
+										Показать больше
 									</ButtonPrimary>
 								</div>
 							) : null}

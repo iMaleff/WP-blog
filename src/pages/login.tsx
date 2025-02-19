@@ -5,7 +5,6 @@ import Label from '@/components/Label/Label'
 import LoginLayout from '@/container/login/LoginLayout'
 import { IS_CHISNGHIAX_DEMO_SITE } from '@/contains/site-settings'
 import { RootState } from '@/stores/store'
-import getTrans from '@/utils/getTrans'
 import { useLogin } from '@faustwp/core'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -18,7 +17,7 @@ export default function Login() {
 	)
 	const { login, loading, error, data } = useLogin()
 	const router = useRouter()
-	const T = getTrans()
+
 
 	if (isReady && isAuthenticated) {
 		router.replace('/')
@@ -41,7 +40,7 @@ export default function Login() {
 								!e.currentTarget.username?.value ||
 								!e.currentTarget.password?.value
 							) {
-								toast.error(T['Username and password are required!'], {
+								toast.error('Имя пользователя и пароль обязательны!', {
 									position: 'bottom-center',
 								})
 								return
@@ -56,30 +55,30 @@ export default function Login() {
 					>
 						<div className="grid gap-4">
 							<div className="grid gap-1.5">
-								<Label htmlFor="email">{T.Username}</Label>
+								<Label htmlFor="email">Имя пользователя</Label>
 								<Input
 									id="username"
 									name="username"
-									placeholder={T['Email or username']}
+									placeholder="Email или имя пользователя"
 									autoCapitalize="none"
 									autoComplete="username"
 									autoCorrect="off"
 									type="text"
 									required
-									defaultValue={IS_CHISNGHIAX_DEMO_SITE ? 'demo' : undefined}
+									
 								/>
 							</div>
 							<div className="grid gap-1.5">
-								<Label htmlFor="password">{T.Password}</Label>
+								<Label htmlFor="password">Пароль</Label>
 								<Input
 									id="password"
 									type="password"
 									required
-									defaultValue={IS_CHISNGHIAX_DEMO_SITE ? 'demo' : undefined}
+									
 								/>
 							</div>
 							<div className="grid">
-								<ButtonPrimary loading={loading}>{T.Login}</ButtonPrimary>
+								<ButtonPrimary loading={loading}>Вход</ButtonPrimary>
 								{!!errorMessage && (
 									<Error className="mt-2 text-center" error={errorMessage} />
 								)}
@@ -93,7 +92,7 @@ export default function Login() {
 						href="/reset-password"
 						className="text-primary-600 underline-offset-2 hover:text-primary-500 hover:underline dark:text-primary-400"
 					>
-						{T['Lost your password?']}
+						Забыли пароль?
 					</Link>
 				</p>
 			</>

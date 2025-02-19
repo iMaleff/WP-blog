@@ -17,7 +17,6 @@ import ButtonInsertImage, { ImageState } from './ButtonInsertImage'
 import Button from '../Button/Button'
 import NcModal from '../NcModal/NcModal'
 import { PostFormatNameType } from '@/utils/getPostDataFromPostFragment'
-import getTrans from '@/utils/getTrans'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import toast from 'react-hot-toast'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
@@ -61,7 +60,7 @@ const postStyles: {
 ]
 
 const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
-	const T = getTrans()
+
 
 	const [postFormatsSelected, setPostFormatsSelected] = useState(
 		defaultData.postFormatsSelected || 'standard',
@@ -123,7 +122,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 			<Button
 				sizeClass="px-3 sm:px-4"
 				className="flex-shrink-0 !rounded-2xl"
-				title={T.pageSubmission['Post options']}
+				title="Пост опции"
 				pattern="third"
 				onClick={openModal}
 			>
@@ -169,9 +168,9 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 			<div>
 				<Label
 					className="block capitalize"
-					title={T.pageSubmission['Post format']}
+					title="Формат поста"
 				>
-					{T.pageSubmission['Post format']}
+					   Формат поста
 				</Label>
 				<Listbox value={postFormatsSelected} onChange={setPostFormatsSelected}>
 					<div className="relative z-10 mt-1">
@@ -239,7 +238,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 		return (
 			<div>
 				<span className="text-base font-semibold">
-					{T.pageSubmission['Gallery images']}
+					Галерея изображений
 				</span>
 				<div className="customScrollBar flex snap-x gap-x-2.5 overflow-x-auto py-2">
 					{[
@@ -256,7 +255,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 							className="flex h-full w-48 flex-shrink-0 snap-start flex-col"
 							key={item}
 						>
-							<Label>{`${T.Image} ${idx + 1}`}</Label>
+							<Label>{`Изображение ${idx + 1}`}</Label>
 							<ButtonInsertImage
 								defaultImage={objGalleryImgs?.[item] || undefined}
 								onChangeImage={(image) => {
@@ -280,7 +279,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 		return (
 			<div>
 				<Label htmlFor="excerpt" className="block capitalize">
-					{T.pageSubmission['Write an excerpt (optional)']}
+				Напишите отрывок (необязательно)
 				</Label>
 				<Textarea
 					onChange={(event) => {
@@ -300,7 +299,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 		return (
 			<div>
 				<Label htmlFor="Schedule-time">
-					{T.pageSubmission['Schedule Publication']} (UTC+0)
+					Расписание публикации (UTC+0)
 				</Label>
 				<Input
 					onChange={(event) => {
@@ -323,9 +322,9 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 				<Label
 					htmlFor="video-url"
 					className="block capitalize"
-					title={T.pageSubmission['Video URL (Youtube, Vimeo, mp4 ... )']}
+					title='Video URL (Youtube, Vimeo, mp4 ... )'
 				>
-					{T.pageSubmission['Video URL (Youtube, Vimeo, mp4 ... )']}
+					URL видео (Youtube, Vimeo, mp4 ... )
 				</Label>
 				<Input
 					onChange={(event) => {
@@ -333,7 +332,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 					}}
 					defaultValue={videoUrl}
 					className="mt-1"
-					placeholder={T.pageSubmission['Video url...']}
+					placeholder="Video url..."
 					type="url"
 					name="video-url"
 					id="video-url"
@@ -358,7 +357,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 					}}
 					defaultValue={audioUrl}
 					className="mt-1"
-					placeholder={T.pageSubmission['Audio url...']}
+					placeholder="Audio url..."
 					type="url"
 					name="audio-url"
 					id="audio-url"
@@ -371,7 +370,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 		return (
 			<div className="flex items-center gap-3 sm:gap-8">
 				<Label htmlFor="allow-comments" className="block capitalize">
-					{T.pageSubmission['Allow comments']}
+					Разрешить комментарии
 				</Label>
 				<Switch
 					checked={isAllowComments}
@@ -380,7 +379,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 					name="allow-comments"
 					id="allow-comments"
 				>
-					<span className="sr-only">Allow comments</span>
+					<span className="sr-only">Разрешить комментарии</span>
 					<span
 						aria-hidden="true"
 						className={`${
@@ -401,9 +400,9 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 			<div>
 				<Label
 					className="block capitalize"
-					title={T.pageSubmission['Post style']}
+					title="Стиль поста"
 				>
-					{T.pageSubmission['Post style']}
+					Стиль поста
 				</Label>
 				<Listbox
 					value={selected}
@@ -461,11 +460,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 						</Transition>
 						<span>
 							<span className="text-xs text-neutral-500 dark:text-neutral-400">
-								{
-									T.pageSubmission[
-										'Choose the post style. Only applies to Standard format!'
-									]
-								}
+								Выберите стиль поста. Применяется только к формату "Стандартный"
 							</span>
 						</span>
 					</div>
@@ -478,7 +473,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 		return (
 			<div className="flex items-center gap-3 sm:gap-8">
 				<Label htmlFor="show-right-sidebar" className="block capitalize">
-					{T.pageSubmission['Show right sidebar']}
+					Показать боковую панель
 				</Label>
 
 				<Switch
@@ -488,7 +483,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 					name="show-right-sidebar"
 					id="show-right-sidebar"
 				>
-					<span className="sr-only">Show right sidebar</span>
+					<span className="sr-only">Показать боковую панель</span>
 					<span
 						aria-hidden="true"
 						className={`${
@@ -556,7 +551,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 									closeModal()
 								}}
 							>
-								{T.Cancel}
+								Отменить
 							</Button>
 							<ButtonPrimary
 								type="submit"
@@ -565,7 +560,7 @@ const PostOptionsBtn: FC<PostOptionsBtnProps> = ({ onSubmit, defaultData }) => {
 									closeModal()
 								}}
 							>
-								{T.Apply}
+								Применить
 							</ButtonPrimary>
 						</div>
 					)

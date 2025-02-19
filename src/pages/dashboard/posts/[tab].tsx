@@ -27,7 +27,6 @@ import DashboardLayout, {
 } from "@/container/DashboardLayout";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores/store";
-import getTrans from "@/utils/getTrans";
 
 const Page: FaustPage<{}> = () => {
   const { isReady, isAuthenticated } = useSelector(
@@ -37,7 +36,7 @@ const Page: FaustPage<{}> = () => {
   const client = getApolloAuthClient();
   const currentTab: TDashBoardPostTab =
     (router.query.tab as TDashBoardPostTab) || "published";
-  const T = getTrans();
+  
 
   const [refetchTimes, setRefetchTimes] = React.useState(0);
 
@@ -182,37 +181,37 @@ const Page: FaustPage<{}> = () => {
                   scope="col"
                   className="py-3.5 pl-4 pr-3 text-start text-sm font-normal text-neutral-600 dark:text-neutral-400 sm:pl-0 capitalize"
                 >
-                  {T.Post}
+                  Пост
                 </th>
                 <th
                   scope="col"
                   className="px-3 py-3.5 text-start text-sm font-normal text-neutral-600 dark:text-neutral-400"
                 >
-                  {T.Likes}
+                  Лайки
                 </th>
                 <th
                   scope="col"
                   className="px-3 py-3.5 text-start text-sm font-normal text-neutral-600 dark:text-neutral-400"
                 >
-                  {T.Categories}
+                  Категории
                 </th>
                 <th
                   scope="col"
                   className="px-3 py-3.5 text-start text-sm font-normal text-neutral-600 dark:text-neutral-400"
                 >
-                  {T.Views}
+                  Просмотры
                 </th>
                 <th
                   scope="col"
                   className="px-3 py-3.5 text-start text-sm font-normal text-neutral-600 dark:text-neutral-400"
                 >
-                  {T.Saveds}
+                  Сохраненные
                 </th>
                 <th
                   scope="col"
                   className="px-3 py-3.5 text-start text-sm font-normal text-neutral-600 dark:text-neutral-400"
                 >
-                  {T.Comments}
+                  Комментарии
                 </th>
                 <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
                   <span className="sr-only">Edit</span>
@@ -311,7 +310,7 @@ const Page: FaustPage<{}> = () => {
                       loading={getPostsOfViewerResult.loading}
                       onClick={handleClickLoadmore}
                     >
-                      {T["Load more"]}
+                      Загрузить больше
                     </ButtonPrimary>
                   </td>
                 )}
@@ -330,10 +329,10 @@ const Page: FaustPage<{}> = () => {
           <div className="sm:flex sm:items-center">
             <div className="sm:flex-auto">
               <h1 className="text-lg font-semibold text-gray-900 dark:text-neutral-200 capitalize">
-                {currentTab} {T["Posts"]}
+                {currentTab} Посты
               </h1>
               <p className="mt-2 text-sm text-gray-700 dark:text-neutral-400">
-                {T["A list of all your posts. Let’s get you some views! 🚀"]}
+                Список всех ваших постов. Давайте получим вам несколько просмотров! 🚀
               </p>
             </div>
           </div>

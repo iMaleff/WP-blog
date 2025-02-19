@@ -17,11 +17,10 @@ import useGetPostsNcmazMetaByIds from '@/hooks/useGetPostsNcmazMetaByIds'
 import { TPostCard } from '@/components/Card2/Card2'
 import { GetServerSidePropsContext } from 'next'
 import TabFilters from '@/components/TabFilters'
-import getTrans from '@/utils/getTrans'
 import { FireIcon } from '@/components/Icons/Icons'
 import ArchiveFilterListBox from '@/components/ArchiveFilterListBox/ArchiveFilterListBox'
 
-const T = getTrans()
+
 const GET_POSTS_FIRST_COMMON = 24
 
 interface ConTextQuery {
@@ -152,7 +151,7 @@ const Page: FaustPage<PostsFilterPageQueryGetPostsQuery> = (props) => {
 				headerMenuItems={props.data?.primaryMenuItems?.nodes || []}
 				footerMenuItems={props.data?.footerMenuItems?.nodes || []}
 				pageFeaturedImageUrl={null}
-				pageTitle={T.Posts}
+				pageTitle={'Статьи'}
 				generalSettings={
 					props.data?.generalSettings as NcgeneralSettingsFieldsFragmentFragment
 				}
@@ -163,10 +162,10 @@ const Page: FaustPage<PostsFilterPageQueryGetPostsQuery> = (props) => {
 							<header>
 								<div className="mb-2 flex items-center gap-2 text-sm font-medium text-neutral-500">
 									<FireIcon className="h-6 w-6" />
-									<span className="">{T['Explore']}</span>
+									<span className="">{'Исследовать'}</span>
 								</div>
 								<h1 className="block text-2xl font-semibold capitalize sm:text-3xl lg:text-4xl">
-									{T['Posts']}
+									{'Статьи'}
 								</h1>
 							</header>
 

@@ -7,7 +7,6 @@ import Label from '@/components/Label/Label'
 import NcModal from '@/components/NcModal/NcModal'
 import { FC, useEffect, useState } from 'react'
 import { EditorItemImageAttrs } from './MenuBar'
-import getTrans from '@/utils/getTrans'
 import CircleLoading from '@/components/Loading/CircleLoading'
 import Alert from '../Alert'
 import {
@@ -35,7 +34,7 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 	defaultImage,
 	enableUpload = true,
 }) => {
-	const T = getTrans()
+
 
 	let [catImages] = useState(['Upload', 'Insert from URL'])
 
@@ -80,19 +79,19 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 					}}
 				>
 					<div>
-						<Label>{T.pageSubmission['Image URL']}</Label>
+						<Label>'Image URL'</Label>
 						<Input
 							className="mt-1"
 							rounded="rounded-xl"
 							type={'url'}
-							placeholder={T.pageSubmission['Paste or type URL']}
+							placeholder={'Paste or type URL'}
 							onChange={(e) => setUrlState(e.target.value)}
 							defaultValue={urlState}
 							name="url"
 						/>
 					</div>
 					<div>
-						<Label>{T.pageSubmission['Alt text (alternative text)']}</Label>
+							<Label>'Alt text (alternative text)'</Label>
 						<Input
 							className="mt-1"
 							rounded="rounded-xl"
@@ -113,9 +112,7 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 				<div className="py-5">
 					<Alert type="info">
 						{
-							T.pageSubmission[
-								'Sorry this feature is not available yet. Please use the URL option.'
-							]
+							'Извините, эта функция пока недоступна. Пожалуйста, используйте вариант с URL.'
 						}
 					</Alert>
 				</div>
@@ -133,16 +130,13 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 		const handleFileSelect = async (
 			event: React.ChangeEvent<HTMLInputElement>,
 		) => {
-			if (IS_CHISNGHIAX_DEMO_SITE) {
-				return toast.error('This is a demo site. Uploading file is disabled.')
-			}
-
+			
 			try {
 				setFileLoading(true)
 				const file = event?.target?.files?.[0]
 				if (!file) {
 					setFileLoading(false)
-					return toast.error('No file selected')
+					return toast.error('Не выбран файл')
 				}
 
 				const maxSize =
@@ -153,14 +147,14 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 
 				if (file.size > 1024 * 1024 * maxSize) {
 					setFileLoading(false)
-					return toast.error(`File size must be less than ${maxSize}MB`)
+					return toast.error(`Размер файла должен быть меньше ${maxSize}MB`)
 				}
 
 				const accessToken = await getAccessToken()
 
 				if (!accessToken) {
 					setFileLoading(false)
-					return toast.error('Error in getting access token!')
+					return toast.error('Ошибка при получении токена доступа!')
 				}
 
 				setUrlState(URL.createObjectURL(file))
@@ -188,17 +182,17 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 					toast.error(
 						typeof uploadFileRes.message === 'string'
 							? uploadFileRes.message
-							: 'Error in Uploading File!',
+							: 'Ошибка при загрузке файла!',
 					)
 				} else {
-					toast.success('File Uploaded')
+					toast.success('Файл загружен')
 					setUrlState(sourceUrl)
 				}
 			} catch (err) {
 				console.log('File Upload error___', err)
 				setFileLoading(false)
 				setUrlState(defaultImage?.url || '')
-				return toast.error('Error in Uploading File')
+					return toast.error('Ошибка при загрузке файла')
 			}
 		}
 
@@ -246,7 +240,7 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 							/>
 						) : (
 							<span>
-								{!urlState ? T.pageSubmission['Upload a file'] : T.Replace}
+								{!urlState ? 'Upload a file' : 'Replace'}
 							</span>
 						)}
 						<input
@@ -325,12 +319,12 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 				contentExtraClass="max-w-screen-md"
 				renderContent={renderContent}
 				renderTrigger={() => null}
-				modalTitle="Add Image"
+				modalTitle="Добавить изображение"
 				renderFooter={(closeModal) => {
 					return (
 						<div className="flex items-center justify-between">
 							<Button pattern="link" onClick={closeModal}>
-								{T.Cancel}
+								{'Отменить'}
 							</Button>
 							<div className="flex gap-2">
 								{!!urlState && (
@@ -343,7 +337,7 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 										}}
 										className="text-red-500"
 									>
-										{T['Remove']}
+										{'Удалить'}
 									</ButtonThird>
 								)}
 								<ButtonPrimary
@@ -352,7 +346,7 @@ const ModalUploadImage: FC<MenuItemImageProps> = ({
 										urlState ? handleApply() : closeModal()
 									}}
 								>
-									{T.Apply}
+									{'Применить'}
 								</ButtonPrimary>
 							</div>
 						</div>

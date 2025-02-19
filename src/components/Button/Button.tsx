@@ -99,7 +99,7 @@ const Button: FC<ButtonProps> = ({
 				title={title}
 			>
 				{loading && <Loading />}
-				{children || `Перейти`}
+				{children || `Показать следующие`}
 			</Link>
 		)
 	}
@@ -113,7 +113,7 @@ const Button: FC<ButtonProps> = ({
 			title={title}
 		>
 			{loading && <Loading />}
-			{children || `Следующие`}
+			{children || `Показать все`}
 		</button>
 	)
 }

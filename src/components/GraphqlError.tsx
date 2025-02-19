@@ -1,7 +1,7 @@
 import { ApolloError } from '@apollo/client'
 import { FC } from 'react'
 import { RefetchBtn } from './RefetchBtn'
-import getTrans from '@/utils/getTrans'
+
 
 interface GraphqlErrorProps {
 	error?: ApolloError
@@ -20,19 +20,19 @@ const GraphqlError: FC<GraphqlErrorProps> = ({
 }) => {
 	if (!error) return null
 
-	const T = getTrans()
+	
 
-	let title = T['Something went wrong']
-	let message = T['Please try again later']
+	let title = 'Что-то пошло не так'
+	let message = 'Пожалуйста, попробуйте еще раз позже'
 	if (error?.networkError) {
-		title = T['Network error']
+		title = 'Ошибка сети'
 		message = error?.networkError.message
 	} else if (!!error?.graphQLErrors?.length) {
 		const graphQLError = error?.graphQLErrors[0]
-		title = T['GraphQL error']
-		message = graphQLError?.message || T['Please try again later']
+		title = 'Ошибка GraphQL'
+		message = graphQLError?.message || 'Пожалуйста, попробуйте еще раз позже'
 	} else {
-		message = error?.message || T['Please try again later']
+		message = error?.message || 'Пожалуйста, попробуйте еще раз позже'
 	}
 
 	return (
@@ -51,12 +51,8 @@ const GraphqlError: FC<GraphqlErrorProps> = ({
 				/>
 			</svg>
 
-			<h3 className="mt-2 text-sm font-medium">
-				{title || T['Something went wrong']}
-			</h3>
-			<p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
-				{message || T['Please try again later']}
-			</p>
+			<h3 className="mt-2 text-sm font-medium">{title}</h3>
+			<p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">{message}</p>
 			{!!hasRefetchBtn && (
 				<div className="mt-6">
 					<RefetchBtn disabled={loading} onClick={() => refetch?.()} />

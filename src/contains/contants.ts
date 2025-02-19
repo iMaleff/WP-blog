@@ -2,7 +2,7 @@ import {
 	OrderEnum,
 	PostObjectsConnectionOrderbyEnum,
 } from '@/__generated__/graphql'
-import getTrans from '@/utils/getTrans'
+
 
 const avatarColors = [
 	'#ffdd00',
@@ -33,20 +33,18 @@ const avatarColors = [
 	'#E208A7',
 ]
 
-const T = getTrans()
-
 export const FILTERS_OPTIONS: {
 	name: string
 	value: `${PostObjectsConnectionOrderbyEnum}/${OrderEnum}`
 }[] = [
-	{ name: T['Newtest to oldest'], value: 'DATE/DESC' },
-	{ name: T['Oldest to newest'], value: 'DATE/ASC' },
-	{ name: T['A to Z'], value: 'TITLE/ASC' },
-	{ name: T['Z to A'], value: 'TITLE/DESC' },
-	{ name: T['Most views'], value: 'VIEWS_COUNT/DESC' },
-	{ name: T['Most likes'], value: 'LIKES_COUNT/DESC' },
-	{ name: T['Most comments'], value: 'COMMENT_COUNT/DESC' },
-	{ name: T['Comments/asc'], value: 'COMMENT_COUNT/ASC' },
+	{ name: 'От новых к старым', value: 'DATE/DESC' },
+	{ name: 'От старых к новым', value: 'DATE/ASC' },
+	{ name: 'От А до Я', value: 'TITLE/ASC' },
+	{ name: 'От Я до А', value: 'TITLE/DESC' },
+	{ name: 'По популярности (просмотры)', value: 'VIEWS_COUNT/DESC' },
+	{ name: 'По популярности (лайки)', value: 'LIKES_COUNT/DESC' },
+	{ name: 'По количеству комментариев (убывание)', value: 'COMMENT_COUNT/DESC' },
+	{ name: 'По количеству комментариев (возрастание)', value: 'COMMENT_COUNT/ASC' },
 ]
 
 export const GET_POSTS_FIRST_COMMON_FOR_DASHBOARD = 30

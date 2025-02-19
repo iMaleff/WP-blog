@@ -18,7 +18,7 @@ import PageLayout from '@/container/PageLayout'
 import errorHandling from '@/utils/errorHandling'
 import { TCategoryCardFull } from '@/components/CardCategory1/CardCategory1'
 import SearchPageLayout from '@/container/SearchPageLayout'
-import getTrans from '@/utils/getTrans'
+
 
 const Page: FaustPage<SearchPageQueryGetUsersBySearchQuery> = (props) => {
 	const router = useRouter()
@@ -27,7 +27,7 @@ const Page: FaustPage<SearchPageQueryGetUsersBySearchQuery> = (props) => {
 	const _top10Categories =
 		(props.data?.categories?.nodes as TCategoryCardFull[]) || []
 	const search = router.query.search?.[0] || ''
-	const T = getTrans()
+
 
 	const [getUsersBySearch, getUsersBySearchResult] = useLazyQuery(
 		gql(` 
@@ -119,10 +119,10 @@ const Page: FaustPage<SearchPageQueryGetUsersBySearchQuery> = (props) => {
 
 	return (
 		<PageLayout
-			headerMenuItems={props.data?.primaryMenuItems?.nodes || []}
+			headerMenuItems={props.data?.primaryMenuItems?.nodes || []}	
 			footerMenuItems={props.data?.footerMenuItems?.nodes || []}
 			pageFeaturedImageUrl={null}
-			pageTitle={'Search'}
+			pageTitle={'Поиск авторов'}
 			generalSettings={
 				props.data?.generalSettings as NcgeneralSettingsFieldsFragmentFragment
 			}
@@ -150,7 +150,7 @@ const Page: FaustPage<SearchPageQueryGetUsersBySearchQuery> = (props) => {
 							loading={loading}
 							onClick={handleClickShowMore}
 						>
-							{T['Show me more']}
+							{'Показать больше'}
 						</ButtonPrimary>
 					</div>
 				) : null}

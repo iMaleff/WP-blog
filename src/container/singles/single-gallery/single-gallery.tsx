@@ -5,10 +5,8 @@ import { getPostDataFromPostFragment } from '@/utils/getPostDataFromPostFragment
 import { NcmazFcImageHasDetailFieldsFragment } from '@/__generated__/graphql'
 import ListingImageGallery from './ListingImageGallery'
 import MyImage from '@/components/MyImage'
-import getTrans from '@/utils/getTrans'
 import { Album02Icon } from '@/components/Icons/Icons'
 
-const T = getTrans()
 
 interface Props extends SingleType1Props {}
 
@@ -141,7 +139,7 @@ const SingleTypeGallery: FC<Props> = ({ post }) => {
 											>
 												<Album02Icon className="h-5 w-5" />
 												<span className="ms-2 hidden text-xs font-medium text-neutral-800 sm:block">
-													{T['Show all photos']}
+													Показать все фото
 												</span>
 											</div>
 										</div>

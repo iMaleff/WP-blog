@@ -8,14 +8,13 @@ import { GetStaticPropsContext } from 'next'
 import { FOOTER_LOCATION, PRIMARY_LOCATION } from '@/contains/menu'
 import PageLayout from '@/container/PageLayout'
 import Heading from '@/components/Heading/Heading'
-import getTrans from '@/utils/getTrans'
 import ReadingListPageChild from '@/container/readinglist/ReadingListPageChild'
 import { REVALIDATE_TIME } from '@/contains/contants'
 
 //
 
 const Page: FaustPage<GetReadingListPageQuery> = (props) => {
-	const T = getTrans()
+
 
 	return (
 		<>
@@ -23,15 +22,15 @@ const Page: FaustPage<GetReadingListPageQuery> = (props) => {
 				headerMenuItems={props.data?.primaryMenuItems?.nodes || []}
 				footerMenuItems={props.data?.footerMenuItems?.nodes || []}
 				pageFeaturedImageUrl={null}
-				pageTitle={T['Reading list']}
+				pageTitle={'Список чтения'}
 				generalSettings={
 					props.data?.generalSettings as NcgeneralSettingsFieldsFragmentFragment
 				}
 			>
 				<div className="container py-20">
 					<main className="mx-auto max-w-4xl">
-						<Heading desc="Let's read and save your favorite articles here ! 📚">
-							{T['Reading list']}
+						<Heading desc="Читайте и сохраняйте свои любимые статьи здесь! 📚">
+							{'Список чтения'}
 						</Heading>
 						<div className="my-10 border-t border-neutral-100 dark:border-neutral-700"></div>
 
