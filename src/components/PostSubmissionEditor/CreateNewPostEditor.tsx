@@ -25,13 +25,12 @@ import {
 	NC_MUTATION_UPDATE_POST,
 } from '@/fragments/mutations'
 import Label from '../Label/Label'
-import { IS_CHISNGHIAX_DEMO_SITE } from '@/contains/site-settings'
 import NcModal from '../NcModal/NcModal'
 import Link from 'next/link'
 import errorHandling from '@/utils/errorHandling'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/stores/store'
-import getTrans from '@/utils/getTrans'
+
 
 interface Props {
 	isEditingPage?: boolean
@@ -514,7 +513,7 @@ const CreateNewPostEditor: FC<Props> = ({
 									onClick={() => {
 										// open window confirm to confirm revert
 										let result = confirm(
-											'Are you sure you want to revert new changes?',
+											'Вы уверены, что хотите вернуться к предыдущим изменениям?',
 										)
 										if (result) {
 											handleRevertToDefault()

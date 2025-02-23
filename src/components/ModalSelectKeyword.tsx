@@ -76,7 +76,7 @@ const ModalSelectKeyword: FC<Props> = ({ onUpdated, initText = '' }) => {
 
 						<SearchIcon className="-ms-1.5 me-2 h-5 w-5" />
 						<div>
-							<span>Ключевое слово для поиска</span>
+							<span>Поиск по слову</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -86,7 +86,7 @@ const ModalSelectKeyword: FC<Props> = ({ onUpdated, initText = '' }) => {
 				)}
 				onOpenModal={() => setKeyword(initText)}
 				contentExtraClass="max-w-2xl"
-				modalTitle="Ключевое слово для поиска"
+				modalTitle="Поиск по слову"
 				renderContent={renderModalContent}
 				enableFooter={true}
 				renderFooter={(closeModal) => {

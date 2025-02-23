@@ -3,39 +3,39 @@
 	"mailpoet_api_key": "your_mailpoet_api_key",
 	"mailpoet_list_id": "3",
 	"subcription_widget": {
-		"enable": true,
-		"title": "Stay up to date",
-		"description": "Get notified when I publish something new, and unsubscribe at any time.",
-		"placeholder": "Enter your email address",
-		"success_message": "Thank you for subscribing. You're in!",
-		"error_message": "Something went wrong. Please try again. If the problem persists, you can contact me."
+		"enable": false,
+		"title": "Оставайтесь на связи",
+		"description": "Получайте уведомления о новых публикациях и отписывайтесь в любой момент.",
+		"placeholder": "Введите ваш email",
+		"success_message": "Спасибо за подписку. Вы в курсе!",
+		"error_message": "Что-то пошло не так. Пожалуйста, попробуйте снова. Если проблема не решена, вы можете связаться со мной."
 	},
 	"newsletter_section": {
-		"enable": true,
-		"title": "Join our newsletter 🎉",
-		"description": "Read and share new perspectives on just about any topic. Everyone’s welcome.",
+		"enable": false,
+		"title": "Присоединяйтесь к нашей рассылке 🎉",
+		"description": "Читайте и делитесь новыми взглядами. Всех приветствуем.",
 		"right_image": "/images/SVG-subcribe2.png",
-		"features_list": ["Create a free account.", "Write your stories."]
+		"features_list": ["Создайте бесплатный аккаунт."]
 	},
 	"top_banner": {
-		"enable": true,
+		"enable": false,
 		"description": "-50% Intro price for the next 72 hours only!.",
 		"end_link": {
-			"url": "https://themeforest.net/item/ncmaz-nextjs-headless-wordpress-blog-magazine/47815656",
+			"url": "",
 			"text": "Buy now  →",
 			"new_tab": true
 		}
 	},
 	"top_category_section": {
 		"enable": true,
-		"title": "Discover top 10 categories",
-		"sub_title": "Let's explore the most popular categories"
+		"title": "",
+		"sub_title": "Изучайте самые популярные категории"
 	},
 	"site_info": {
-		"site_title": "Ncmaz Nextjs Blog",
-		"site_description": "Ncmaz Nextjs Blog headless WordPress",
-		"site_keywords": "Ncmaz Nextjs Blog",
-		"site_author": "ChisNghiax",
+		"site_title": "Wellness Puzzle",
+		"site_description": "Wellness Puzzle",
+		"site_keywords": "Wellness Puzzle",
+		"site_author": "Igor Malev",
 		"site_email": "Your Email",
 		"site_phone": "Your Phone",
 		"site_address": "Your Address",
@@ -51,25 +51,25 @@
 	"site_socials": [
 		{
 			"name": "facebook",
-			"url": "https://www.facebook.com/yourfacebookpage",
+			"url": "https://www.facebook.com/myfacebookpage",
 			"icon": "/images/socials/facebook.svg",
 			"description": "Follow us on Facebook"
 		},
 		{
 			"name": "twitter",
-			"url": "https://twitter.com/yourtwitterpage",
+			"url": "https://twitter.com/mytwitterpage",
 			"icon": "/images/socials/x-twitter.svg",
 			"description": "Follow us on Twitter"
 		},
 		{
 			"name": "github",
-			"url": "https://www.github.com/yourmediumpage",
+			"url": "https://www.github.com/mymediumpage",
 			"icon": "/images/socials/github.svg",
 			"description": "Follow us on Github"
 		},
 		{
 			"name": "tiktok",
-			"url": "https://www.tiktok.com/yourtiktokpage",
+			"url": "https://www.tiktok.com/mytiktokpage",
 			"icon": "/images/socials/tiktok.svg",
 			"description": "Follow us on Tiktok"
 		}
@@ -77,12 +77,12 @@
 	"site_header": {
 		"desktop_header": {
 			"header_style": "style3",
-			"hide_create_button": false,
+			"hide_create_button": true,
 			"hide_dark_mode_switch": false
 		}
 	},
 	"site_footer": {
-		"all_rights_reserved_text": "© 2024 BooliiTheme Company, Inc. All rights reserved."
+		"all_rights_reserved_text": "© 2025 Wellness Puzzle. All rights reserved."
 	},
 	"single_page": {
 		"show_view_cout": true,
@@ -91,31 +91,31 @@
 	"search_page": {
 		"recommended_searches": {
 			"enable": true,
-			"title": "Recommended searches",
+			"title": "Рекомендуемые поиски",
 			"items": [
 				{
-					"title": "Programming",
+					"title": "Аминокислоты",
 					"url": "/search/posts/programming"
 				},
 				{
-					"title": "Design",
+					"title": "Витамины",
 					"url": "/search/posts/design"
 				},
 				{
-					"title": "Technology",
+					"title": "Минералы",
 					"url": "/search/posts/technology"
 				}
 			]
 		},
 		"show_top_categories": true,
-		"show_newsletter_section": true
+		"show_newsletter_section": false
 	},
 	"archive_page": {
-		"show_newsletter_section": true,
+		"show_newsletter_section": false,
 		"show_top_categories": true
 	},
 	"author_page": {
-		"show_newsletter_section": true,
+		"show_newsletter_section": false,
 		"show_top_categories": true
 	},
 	"post_card": {
@@ -179,49 +179,41 @@
 		]
 	},
 	"resetPassword_page": {
-		"title": "Lost your password?",
-		"sub_title": "Enter your email below to reset your password.",
+		"title": "Забыли пароль?",
+		"sub_title": "Введите ваш email ниже, чтобы сбросить ваш пароль.",
 		"blockquote": {
-			"text": "This theme has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever before.",
-			"author": "Chis agency"
-		}
-	},
-	"signUp_page": {
-		"title": "Create an account",
-		"sub_title": "Enter your email below to create your account.",
-		"blockquote": {
-			"text": "This theme has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever before.",
-			"author": "Chis agency"
+			"text": "Рада что Вы с нами в нашем уникальном сообществе!",
+			"author": "Елена"
 		}
 	},
 	"signIn_page": {
-		"title": "Sign in to your account",
-		"sub_title": "Enter your email below to sign in to your account.",
+		"title": "Вход в ваш аккаунт",
+		"sub_title": "Введите ваш email ниже, чтобы войти в ваш аккаунт.",
 		"blockquote": {
-			"text": "This theme has saved me countless hours of work and helped me deliver stunning designs to my clients faster than ever before.",
-			"author": "Chis agency"
+			"text": "Рада что Вы с нами в нашем уникальном сообществе!",
+			"author": "Елена"
 		},
 		"lost_password": {
 			"is_use_lostpassword_default_of_wp": false,
-			"message": "Lost password not implemented yet! Please contact admmin for support.",
+			"message": "Потерянный пароль не сгенерирован! Пожалуйста, обратитесь к администратору для поддержки.",
 			"url_lostpassword_default_of_wp": "https://yourwebsite.com/wp-login.php?action=lostpassword"
 		}
 	},
 	"mobile_nav_sidebar": {
-		"description": "Discover the most outstanding articles on all topics of life. Write your stories and share them with the community. "
+		"description": "Откройте для себя уникальные знания."
 	},
 	"help_page": {
 		"uri": "/helps",
-		"title": "Helps",
-		"sub_title": "Read and share new perspectives on just about any topic. Everyone’s welcome."
+		"title": "Помощь",
+		"sub_title": "Читайте и делитесь новыми взглядами на любую тему. Всех приветствуем."
 	},
 	"contact_page": {
 		"enable": true,
-		"title": "Get in touch",
-		"sub_title": "We’d love to hear from you. Fill out the form below to get in touch with us.",
+		"title": "Свяжитесь с нами",
+		"sub_title": "Мы будем рады услышать от вас. Заполните форму ниже, чтобы связаться с нами.",
 		"form": {
-			"success_message": "🎉 Thank you for your message. We will get back to you soon.",
-			"error_message": "Something went wrong. Please try again. If the problem persists, you can contact me."
+			"success_message": "🎉 Спасибо за ваше сообщение. Мы скоро вам ответим.",
+			"error_message": "Что-то пошло не так. Пожалуйста, попробуйте снова. Если проблема не решена, вы можете связаться со мной."
 		},
 		"my_contact_info": [
 			{
@@ -253,28 +245,28 @@
 	"document_page": {
 		"enable": true,
 		"uri": "/documents",
-		"title": "Documents",
-		"sub_title": "Read and share new perspectives on just about any topic. Everyone’s welcome."
+		"title": "Документы",
+		"sub_title": "Читайте и делитесь новыми взглядами. Всех приветствуем."
 	},
 	"cookies_policy_page": {
 		"uri": "#"
 	},
 	"privacy_policy_page": {
 		"uri": "/privacy-policy",
-		"title": "Privacy Policy"
+		"title": "Политика конфиденциальности"
 	},
 	"empty_state": {
-		"title": "No results found.",
-		"description": "We couldn’t find any results. Try for something else."
+		"title": "Ничего не найдено.",
+		"description": "Мы не смогли найти результаты. Попробуйте что-то другое."
 	},
 	"discussion_settings": {
 		"enable": true,
 		"must_logged_in_to_comment": true
 	},
 	"general_settings": {
-		"timeFormat": "h:mm a",
-		"language": "en",
-		"timezone": "auto",
-		"dateFormat": "M j, Y"
+        "timeFormat": "H:i",
+        "language": "ru",
+        "timezone": "auto",
+        "dateFormat": "d.m.Y"
 	}
 }

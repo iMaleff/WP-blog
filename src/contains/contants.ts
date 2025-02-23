@@ -41,10 +41,10 @@ export const FILTERS_OPTIONS: {
 	{ name: 'От старых к новым', value: 'DATE/ASC' },
 	{ name: 'От А до Я', value: 'TITLE/ASC' },
 	{ name: 'От Я до А', value: 'TITLE/DESC' },
-	{ name: 'По популярности (просмотры)', value: 'VIEWS_COUNT/DESC' },
-	{ name: 'По популярности (лайки)', value: 'LIKES_COUNT/DESC' },
-	{ name: 'По количеству комментариев (убывание)', value: 'COMMENT_COUNT/DESC' },
-	{ name: 'По количеству комментариев (возрастание)', value: 'COMMENT_COUNT/ASC' },
+	{ name: 'Просмотры', value: 'VIEWS_COUNT/DESC' },
+	{ name: 'Лайки', value: 'LIKES_COUNT/DESC' },
+	{ name: 'Комментарии ↓', value: 'COMMENT_COUNT/DESC' },
+	{ name: 'Комментарии ↑', value: 'COMMENT_COUNT/ASC' },
 ]
 
 export const GET_POSTS_FIRST_COMMON_FOR_DASHBOARD = 30

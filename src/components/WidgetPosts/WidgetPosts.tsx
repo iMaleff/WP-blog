@@ -16,7 +16,7 @@ const WidgetPosts: FC<WidgetPostsProps> = ({
 }) => {
 	return (
 		<div className={`nc-WidgetPosts overflow-hidden ${className}`}>
-			<WidgetHeading1 title="🎯 Latest Posts" />
+			<WidgetHeading1 title="🎯 Последние статьи" />
 			<div className="flex flex-col divide-y divide-neutral-100 dark:divide-neutral-700">
 				{isLoading ? (
 					<>

@@ -27,7 +27,7 @@ const AddSubscriberForm: FC<Props> = ({ className = '' }) => {
 	if (data && called && data?.ncmazFaustAddSubscriberToMailpoet?.success) {
 		// thank you message after success subscribe
 		THANKS =
-			NC_SITE_SETTINGS.subcription_widget?.success_message || 'Thank you!'
+			NC_SITE_SETTINGS.subcription_widget?.success_message || 'Спасибо!'
 	}
 
 	if (data && called && !data?.ncmazFaustAddSubscriberToMailpoet?.success) {
@@ -35,7 +35,7 @@ const AddSubscriberForm: FC<Props> = ({ className = '' }) => {
 			error?.message ||
 			data?.ncmazFaustAddSubscriberToMailpoet?.errors ||
 			NC_SITE_SETTINGS.subcription_widget?.error_message ||
-			'Error'
+			'Ошибка'
 	}
 
 	return (

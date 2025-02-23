@@ -13,7 +13,7 @@ const WidgetHeading1: FC<WidgetHeading1Props> = ({
 	className = '',
 	title,
 	viewAllLink,
-	viewAllLabel = 'View all',
+	viewAllLabel = 'Посмотреть все',
 	icon,
 }) => {
 	return (

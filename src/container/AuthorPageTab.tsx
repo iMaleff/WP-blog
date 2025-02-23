@@ -9,7 +9,7 @@ const TABS: {
 }[] = [
   {
     tab: "",
-    label: T.Articles,
+    label: "Статьи",
     svgIcon: (
       <svg
         className="mb-2.5 w-7 h-7  "
@@ -56,7 +56,7 @@ const TABS: {
   },
   {
     tab: "favorites",
-    label: T["Favorites list"],
+    label: "Избранное",
     svgIcon: (
       <svg
         className="mb-2.5 w-7 h-7  "
@@ -85,7 +85,7 @@ const TABS: {
   },
   {
     tab: "bookmarks",
-    label: T.Bookmarks,
+    label: "Закладки",
     svgIcon: (
       <svg
         className="mb-2.5 w-7 h-7  "

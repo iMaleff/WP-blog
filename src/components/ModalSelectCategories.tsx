@@ -11,14 +11,14 @@ import { QUERY_GET_CATEGORIES } from '@/fragments/queries'
 import { NcmazFcCategoryFullFieldsFragmentFragment } from '@/__generated__/graphql'
 import errorHandling from '@/utils/errorHandling'
 import GraphqlError from './GraphqlError'
-import getTrans from '@/utils/getTrans'
 import { getCatgoryDataFromCategoryFragment } from '@/utils/getCatgoryDataFromCategoryFragment'
 import NcImage from './NcImage/NcImage'
 import ButtonThird from './Button/ButtonThird'
 import { CategoryIcon } from './Icons/Icons'
 
-const T = getTrans()
-
+interface Props {
+	onUpdated: (ids: number[]) => void
+}
 interface Props {
 	onUpdated: (ids: number[]) => void
 	initIds?: number[]
@@ -136,7 +136,7 @@ const ModalSelectCategories: FC<Props> = ({ onUpdated, initIds = [] }) => {
 				{data?.categories?.pageInfo.hasNextPage ? (
 					<div className="mt-7 flex justify-center">
 						<ButtonPrimary loading={loading} onClick={handleClickShowMore}>
-							{T['Show me more']}
+							Показать еще
 						</ButtonPrimary>
 					</div>
 				) : null}
@@ -168,7 +168,7 @@ const ModalSelectCategories: FC<Props> = ({ onUpdated, initIds = [] }) => {
 						)}
 						<CategoryIcon className="-ms-1.5 me-2 h-5 w-5" />
 						<div>
-							<span>{T.Categories}</span>
+							<span>Категории</span>
 						</div>
 						<ChevronDownIcon
 							className="-me-1 ms-2 h-4 w-4"
@@ -178,7 +178,7 @@ const ModalSelectCategories: FC<Props> = ({ onUpdated, initIds = [] }) => {
 				)}
 				onOpenModal={() => setIdSlecteds(initIds)}
 				contentExtraClass="max-w-screen-lg"
-				modalTitle={T['Categories']}
+				modalTitle="Категории"
 				renderContent={renderModalContent}
 				enableFooter={true}
 				renderFooter={(closeModal) => {
@@ -189,7 +189,7 @@ const ModalSelectCategories: FC<Props> = ({ onUpdated, initIds = [] }) => {
 								onClick={() => setIdSlecteds([])}
 								// sizeClass="py-3 px-4 sm:py-3 sm:px-6"
 							>
-								{T['Clear']}
+								Очистить
 							</Button>
 							<ButtonPrimary
 								onClick={() => {
@@ -198,7 +198,7 @@ const ModalSelectCategories: FC<Props> = ({ onUpdated, initIds = [] }) => {
 								}}
 								// sizeClass="py-3 px-4 sm:py-3 sm:px-6"
 							>
-								{T['Apply']}
+								Применить
 							</ButtonPrimary>
 						</div>
 					)
@@ -243,7 +243,7 @@ const CardCategory: FC<CardCategory1Props> = ({
 						size === 'large' ? 'text-sm' : 'text-xs'
 					} mt-[2px] block text-neutral-500 dark:text-neutral-400`}
 				>
-					{count} {T['Articles']}
+					{count} статей
 				</span>
 			</div>
 		</div>
